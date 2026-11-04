@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP Nusantara Unggul - Website Resmi Sekolah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        royal: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#111827',
+                        },
+                        brandgreen: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        softblue: {
+                            DEFAULT: '#f0f6ff',
+                            card: '#e6effd'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(37, 99, 235, 0.08)',
+                        'floating': '0 18px 40px -10px rgba(15, 23, 42, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .floating-anim {
+            animation: float 4.5s ease-in-out infinite;
+        }
+        .floating-anim-delayed {
+            animation: float 4.5s ease-in-out 2.2s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+        /* Smooth masking for hero image so the right side stays 100% crystal clear */
+        .hero-img-blend {
+            object-position: right center;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-[#070b14] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- ================= TOP NAVIGATION BAR (TEMA BIRU SERAGAM) ================= -->
+    <header class="sticky top-0 z-40 w-full bg-white/95 dark:bg-[#070b14]/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Kiri: Logo Biru Royal & Nama Sekolah -->
+            <a href="#beranda" class="flex items-center gap-3.5 shrink-0 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white text-lg shadow-md shadow-blue-600/30 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="leading-tight">
+                    <span class="block text-lg sm:text-[19px] font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+                        SMP Negeri 1 Nusantara
+                    </span>
+                    <span class="block text-[10px] font-bold tracking-wider uppercase text-blue-600 dark:text-blue-400">
+                        AKREDITASI A UNGGUL • JAKARTA SELATAN
+                    </span>
+                </div>
+            </a>
+
+            <!-- Tengah: Menu Navigasi Bersih -->
+            <nav class="hidden xl:flex items-center space-x-7 text-[13.5px] font-semibold text-slate-600 dark:text-slate-300">
+                <a href="#beranda" class="text-blue-600 dark:text-blue-400 font-bold transition">Beranda</a>
+                <a href="#program" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Program</a>
+                <a href="#guru" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Dewan Guru</a>
+                <button onclick="openPPDBModal()" class="hover:text-blue-600 dark:hover:text-blue-400 transition font-semibold">PPDB Online</button>
+                <a href="#program" onclick="filterProgram('olahraga')" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Ekstrakurikuler</a>
+                <a href="#fasilitas" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Fasilitas</a>
+                <a href="#berita" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Agenda</a>
+            </nav>
+
+            <!-- Kanan: Tombol Daftar PPDB 2026 & Dark Mode Toggle -->
+            <div class="hidden lg:flex items-center gap-3 shrink-0">
+                <button onclick="openPPDBModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-xs font-bold shadow-md shadow-blue-600/30 transition transform hover:-translate-y-0.5">
+                    Daftar PPDB 2026
+                </button>
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Mode Terang / Gelap">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger & Theme -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400">
+                    <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <button onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                    <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-4 pt-3 pb-6 space-y-2.5 text-sm">
+            <a href="#beranda" onclick="toggleMobileMenu()" class="block py-2 font-bold text-blue-600">Beranda</a>
+            <a href="#profil" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Tentang Kami</a>
+            <a href="#program" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Program & Ekskul</a>
+            <a href="#fasilitas" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Fasilitas & Guru</a>
+            <a href="#berita" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Berita</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 dark:text-slate-300 font-medium">Kontak</a>
+            <div class="pt-3 flex flex-col gap-2.5">
+                <button onclick="openPPDBModal(); toggleMobileMenu();" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-center font-bold text-xs">
+                    Daftar PPDB Sekarang
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= TOP HERO SECTION (MENGGUNAKAN ELEMEN <IMG> LANGSUNG Kolaborasi matematika siswa SMP Indonesia-3.png TANPA OVERLAY DI SISI KANAN) ================= -->
+    <section id="beranda" class="relative w-full min-h-[620px] lg:min-h-[86vh] flex flex-col lg:flex-row items-center bg-[#f8f9fa] dark:bg-[#070b14] overflow-hidden transition-colors duration-300">
+        
+        <!-- LAYER GAMBAR UTAMA (Desktop Full-Bleed & Mobile Responsive) -->
+        <div class="relative lg:absolute lg:inset-0 w-full h-[320px] sm:h-[420px] lg:h-full z-0 order-2 lg:order-none overflow-hidden">
+            <img 
+                id="hero-main-img" 
+                src="Kolaborasi matematika siswa SMP Indonesia-3.png" 
+                alt="Kolaborasi Matematika Siswa SMP Indonesia" 
+                class="w-full h-full object-cover object-right select-none transition-opacity duration-500"
+                onerror="handleHeroImageError(this)"
+            />
+            
+            <!-- Gradien Transisi HANYA di Sisi Kiri (45% Lebar Layar Desktop) Agar Kelima Siswa-Siswi di Sisi Kanan 100% Jernih & Tidak Tertutup -->
+            <div class="hidden lg:block absolute inset-y-0 left-0 w-[45%] bg-gradient-to-r from-[#f8f9fa] via-[#f8f9fa]/85 to-transparent dark:from-[#070b14] dark:via-[#070b14]/90 dark:to-transparent pointer-events-none"></div>
+            
+            <!-- Gradien Halus di Bagian Atas Mobile untuk Transisi ke Teks -->
+            <div class="lg:hidden absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-[#f8f9fa] to-transparent dark:from-[#070b14] dark:to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- KONTEN UTAMA HERO -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-10 lg:py-20 order-1 lg:order-none">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+                
+                <!-- Kolom Kiri: Badge, Judul Utama, Deskripsi & Tombol CTA -->
+                <div class="lg:col-span-5 xl:col-span-5 space-y-6 text-left">
+                    
+                    <!-- Badge Atas -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/90 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs sm:text-[12.5px] font-extrabold tracking-wider uppercase shadow-sm">
+                        <i class="fa-solid fa-shield-heart text-blue-600 dark:text-blue-400"></i>
+                        <span>SEKOLAH RAMAH ANAK & KURIKULUM MERDEKA MANDIRI</span>
+                    </div>
+
+                    <!-- Judul Utama -->
+                    <div class="space-y-2">
+                        <h1 id="heroHeadlineText" class="text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight leading-[1.08] text-slate-900 dark:text-white font-heading">
+                            SMP Negeri 1 <br>
+                            <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Nusantara</span>
+                        </h1>
+                    </div>
+
+                    <!-- Deskripsi Sesuai Instruksi -->
+                    <p id="heroDescText" class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
+                        Sekolah adalah tempat mencetak penerus bangsa yang berkualitas, berkarakter mulia, dan berprestasi di segala bidang yang dapat bersaing di dunia internasional.
+                    </p>
+
+                    <!-- Tombol CTA: Daftar PPDB Sekarang (Biru Royal) & Video Profil -->
+                    <div class="flex flex-wrap items-center gap-4 pt-1">
+                        <button onclick="openPPDBModal()" class="px-7 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-sm flex items-center gap-3 shadow-xl shadow-blue-600/30 transition transform hover:-translate-y-0.5">
+                            <span>Daftar PPDB Sekarang</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+
+                        <button onclick="openVideoModal()" class="px-7 py-4 rounded-xl bg-white dark:bg-slate-900 border border-blue-200 dark:border-slate-700 hover:border-blue-600 hover:bg-blue-50/60 text-slate-800 dark:text-slate-100 font-bold text-sm flex items-center gap-2.5 transition shadow-sm">
+                            <i class="fa-solid fa-circle-play text-blue-600 text-base"></i>
+                            <span>Video Profil</span>
+                        </button>
+                    </div>
+
+                    <!-- Poin Keunggulan Cepat -->
+                    <div class="pt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-[13px] font-bold text-slate-700 dark:text-slate-300">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i>
+                            <span>Terakreditasi A (Unggul)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i>
+                            <span>Smart Bilingual Class</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i>
+                            <span>Lab STEM & Robotika</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Area Visual 5 Siswa-Siswi SMP + 3 Floating Badges yang Tidak Menutupi Wajah -->
+                <div class="lg:col-span-7 xl:col-span-7 relative min-h-[90px] lg:min-h-[490px] flex flex-col justify-between pointer-events-none">
+                    
+                    <!-- Baris Atas Floating Badges (Ditempatkan di Sudut Kiri Atas Papan Tulis & Pojok Kanan Atas Jendela) -->
+                    <div class="flex flex-wrap items-start justify-between gap-3 w-full pt-2 lg:pt-0">
+                        
+                        <!-- Floating Badge 1: Akreditasi A • 98.6 / 100 (Merah Koral Kontras) -->
+                        <div class="floating-anim pointer-events-auto bg-gradient-to-br from-rose-500 to-red-600 text-white px-4 py-3 rounded-2xl shadow-floating flex items-center gap-3 border border-white/25">
+                            <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white text-sm shrink-0">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <div class="leading-tight">
+                                <span class="block text-[10px] font-bold uppercase tracking-wider text-rose-100">AKREDITASI A</span>
+                                <span class="block text-base font-black">98.6 / 100</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2: Statistik Kelulusan 99% • Favorit SMA & SMK -->
+                        <div class="floating-anim-delayed pointer-events-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-floating border border-blue-100 dark:border-slate-800 flex items-center gap-3">
+                            <div class="relative w-11 h-11 flex items-center justify-center shrink-0">
+                                <svg class="w-11 h-11 -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-blue-100 dark:text-slate-700" stroke-width="3.8" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="text-blue-600" stroke-dasharray="99, 100" stroke-width="3.8" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="absolute text-[10px] font-black text-blue-600 dark:text-blue-400">99%</span>
+                            </div>
+                            <div class="leading-tight">
+                                <span class="block text-[10px] font-semibold text-slate-400">Statistik Kelulusan</span>
+                                <span class="block text-xs font-extrabold text-slate-900 dark:text-white">Favorit SMA & SMK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baris Bawah Floating Badge 3 (Ditempatkan di Sisi Kiri Bawah Kursi agar Wajah & Buku Matematika Siswa Terlihat Utuh) -->
+                    <div class="flex items-end justify-between w-full mt-6 lg:mt-auto pb-1">
+                        <div class="floating-anim pointer-events-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-4 rounded-2xl shadow-floating border border-blue-100 dark:border-slate-800 w-full sm:w-64">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-extrabold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-chart-line text-blue-600"></i> Rapor Asesmen 2026
+                                </span>
+                                <span class="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-[10px] font-extrabold">Unggul</span>
+                            </div>
+                            <div class="space-y-1 text-xs">
+                                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300">
+                                    <span>Aisyah Putri A.</span>
+                                    <span class="font-extrabold text-slate-900 dark:text-white">96.8</span>
+                                </div>
+                                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300">
+                                    <span>Farel Raditya P.</span>
+                                    <span class="font-extrabold text-slate-900 dark:text-white">94.2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tombol Praktis di Pojok Kanan Bawah untuk Memilih/Memuat Foto Lokal Jika Dibuka dari Direktori Berbeda -->
+        <label for="uploadHeroBgInput" class="cursor-pointer absolute bottom-3 right-4 z-20 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/95 hover:bg-blue-50 text-[11px] font-bold text-blue-700 dark:text-blue-300 shadow-md border border-blue-200 dark:border-slate-700 backdrop-blur-sm transition" title="Klik atau tarik file Kolaborasi matematika siswa SMP Indonesia-3.png ke area ini jika membuka dari folder berbeda">
+            <i class="fa-solid fa-camera text-blue-600"></i>
+            <span>Ganti/Muat Foto Lokal</span>
+            <input id="uploadHeroBgInput" type="file" accept="image/*" onchange="handleCustomHeroBg(event)" class="hidden" />
+        </label>
+    </section>
+
+    <!-- ================= SECTION 1 (SOFT BLUE #f0f6ff): KENAPA HARUS SMP NEGERI 1 NUSANTARA? (KOTAK IKON BIRU GRADASI SOLID & IKON PUTIH) ================= -->
+    <section id="kenapa-kami" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#f0f6ff] dark:bg-slate-900/70 border-y border-blue-100/60 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <!-- Judul Seksi -->
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                    Kenapa Harus <span class="text-blue-600">SMP Negeri 1</span><br>
+                    Nusantara?
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                    Alasan kenapa harus memilih untuk bergabung dengan SMP Negeri 1 Nusantara.
+                </p>
+            </div>
+
+            <!-- 4 Kartu Keunggulan dengan Kotak Ikon Biru Gradasi Solid (from-blue-600 to-blue-700) & Ikon Putih Bersih -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1: Smart Bilingual Class -->
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white rounded-2xl p-8 text-center shadow-soft border border-blue-100/80 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg shadow-blue-600/30 group-hover:scale-110 flex items-center justify-center transition duration-300">
+                        <i class="fa-solid fa-earth-asia text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Smart Bilingual Class</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Pembelajaran Sains & Matematika pengantar dwi-bahasa dengan fasilitas kelas interaktif terbaik.
+                    </p>
+                </div>
+
+                <!-- Card 2: Lab STEM & Robotika -->
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white rounded-2xl p-8 text-center shadow-soft border border-blue-100/80 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg shadow-blue-600/30 group-hover:scale-110 flex items-center justify-center transition duration-300">
+                        <i class="fa-solid fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Lab STEM & Robotika</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Lingkungan belajar sains modern dilengkapi laboratorium praktikum IPA, koding, dan inovasi robotik.
+                    </p>
+                </div>
+
+                <!-- Card 3: Adab Islami & Karakter -->
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white rounded-2xl p-8 text-center shadow-soft border border-blue-100/80 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg shadow-blue-600/30 group-hover:scale-110 flex items-center justify-center transition duration-300">
+                        <i class="fa-solid fa-book-quran text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Tahfidz & Budi Pekerti</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Penguatan adab mulia, pembiasaan ibadah harian, dan bimbingan pendidik profesional tersertifikasi.
+                    </p>
+                </div>
+
+                <!-- Card 4: Pembinaan Olimpiade & Prestasi -->
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white rounded-2xl p-8 text-center shadow-soft border border-blue-100/80 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg shadow-blue-600/30 group-hover:scale-110 flex items-center justify-center transition duration-300">
+                        <i class="fa-solid fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Jejaring Prestasi Luas</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        99% lulusan diterima di SMA & SMK favorit nasional serta meraih medali OSN, O2SN, dan FLS2N.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 2 (PUTIH #ffffff): PROFIL & SAMBUTAN KEPALA SEKOLAH ================= -->
+    <section id="profil" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                    Profil <span class="text-blue-600">SMP Negeri 1</span><br>
+                    Nusantara
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Foto Kepala Sekolah -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[#f0f6ff] dark:border-slate-800 bg-[#f0f6ff] dark:bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Kepala Sekolah SMP Negeri 1 Nusantara" class="w-full h-[380px] object-cover object-top">
+                        <div class="p-5 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent text-white -mt-24 relative z-10 pt-12">
+                            <span class="px-3 py-1 rounded-full bg-blue-600 text-[10px] font-bold uppercase tracking-wider">Kepala Sekolah</span>
+                            <h3 class="text-lg font-extrabold mt-1.5">Dr. H. Hendra Wijaya, M.Pd.</h3>
+                            <p class="text-xs text-slate-300">NIP. 19740815 199903 1 004</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teks Sambutan Kepala Sekolah & Statistik -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0f6ff] dark:bg-slate-800 text-blue-600 dark:text-blue-400 text-xs font-bold">
+                        <i class="fa-solid fa-quote-left"></i> Sambutan Kepala Sekolah
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                        Sambutan Kepala Sekolah SMP Negeri 1 Nusantara
+                    </h3>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Assalamu’alaikum Warahmatullahi Wabarakatuh. Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa. SMP Negeri 1 Nusantara berkomitmen menjadi rumah kedua bagi para siswa untuk bertumbuh menjadi pribadi yang beriman, berkarakter mulia, unggul dalam sains dan teknologi, serta siap bersaing di tingkat global.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Melalui penerapan Kurikulum Merdeka dan program kelas bilingual serta riset sains, kami mendampingi setiap anak menemukan potensi terbaiknya sejak bangku Sekolah Menengah Pertama.
+                    </p>
+
+                    <!-- Mini Stat Cards dengan latar Soft Blue & Teks Biru Royal -->
+                    <div class="grid grid-cols-3 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-[#f0f6ff] dark:bg-slate-900 border border-blue-100 dark:border-slate-800 text-center">
+                            <div class="text-xl sm:text-2xl font-black text-blue-600">30</div>
+                            <div class="text-[11px] font-semibold text-slate-600 dark:text-slate-400">Rombel Kelas VII–IX</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#f0f6ff] dark:bg-slate-900 border border-blue-100 dark:border-slate-800 text-center">
+                            <div class="text-xl sm:text-2xl font-black text-blue-600">A+</div>
+                            <div class="text-[11px] font-semibold text-slate-600 dark:text-slate-400">Akreditasi Nasional</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#f0f6ff] dark:bg-slate-900 border border-blue-100 dark:border-slate-800 text-center">
+                            <div class="text-xl sm:text-2xl font-black text-blue-600">100%</div>
+                            <div class="text-[11px] font-semibold text-slate-600 dark:text-slate-400">Digital Smart Class</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 flex flex-wrap gap-3">
+                        <button onclick="openVisiMisiModal()" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-md shadow-blue-600/20 transition">
+                            Baca Visi & Misi Lengkap
+                        </button>
+                        <a href="#fasilitas" class="px-6 py-3 rounded-xl bg-[#f0f6ff] dark:bg-slate-800 text-blue-600 dark:text-white text-xs sm:text-sm font-bold hover:bg-blue-100 transition">
+                            Lihat Fasilitas Sekolah
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 3 (SOFT BLUE #f0f6ff): PROGRAM UNGGULAN & EKSTRAKURIKULER SMP ================= -->
+    <section id="program" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#f0f6ff] dark:bg-slate-900/70 border-y border-blue-100/60 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                    Program Unggulan & Ekskul di <span class="text-blue-600">SMP Negeri 1</span> Nusantara
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                    Pilihan program kelas akademik dan pengembangan bakat ekstrakurikuler untuk mencetak siswa berprestasi internasional.
+                </p>
+            </div>
+
+            <!-- Filter Tabs Interaktif -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+                <button id="tab-semua" onclick="filterProgram('semua')" class="prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-600 text-white transition shadow-md shadow-blue-600/20">
+                    Semua
+                </button>
+                <button id="tab-unggulan" onclick="filterProgram('unggulan')" class="prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 transition border border-blue-100 dark:border-slate-700">
+                    Kelas Unggulan
+                </button>
+                <button id="tab-sains" onclick="filterProgram('sains')" class="prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 transition border border-blue-100 dark:border-slate-700">
+                    Sains & Teknologi
+                </button>
+                <button id="tab-olahraga" onclick="filterProgram('olahraga')" class="prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 transition border border-blue-100 dark:border-slate-700">
+                    Seni & Olahraga
+                </button>
+            </div>
+
+            <!-- Grid Kartu Program dengan FOTO REALISTIS & Label Biru Seragam -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Item 1: Kelas Bilingual -->
+                <div data-category="unggulan" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="Smart Bilingual Class" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-600 px-3 py-1 rounded-full shadow">Kelas Unggulan</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Smart Bilingual Class (Cambridge)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Pembelajaran Matematika, Sains, dan Bahasa Inggris dengan pengantar dwi-bahasa untuk kesiapan kompetisi global.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Smart Bilingual Class (Cambridge)', 'Kelas unggulan dengan pengantar dwi-bahasa (Bahasa Indonesia & Bahasa Inggris) untuk mata pelajaran Matematika dan IPA, dilengkapi modul berstandar internasional dan praktik percakapan aktif setiap pekan.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Pembinaan Olimpiade OSN -->
+                <div data-category="sains" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=700&q=80" alt="Pembinaan Olimpiade OSN" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-700 px-3 py-1 rounded-full shadow">Sains & Teknologi</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Pembinaan Olimpiade Sains (OSN)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Pembinaan intensif Olimpiade Sains Nasional (Matematika, IPA, IPS) dibimbing langsung oleh mentor peraih medali.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Pembinaan Olimpiade Sains (OSN)', 'Program akselerasi prestasi bagi siswa berbakat di bidang Matematika, Fisika, Biologi, dan IPS melalui klinik sains rutin, simulasi komputer, serta kemah riset pelajar.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Tahfidz Al-Qur'an & Karakter -->
+                <div data-category="unggulan" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80" alt="Tahfidz & Karakter Mulia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-600 px-3 py-1 rounded-full shadow">Kelas Unggulan</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Tahfidz Al-Qur'an & Karakter Mulia</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Program pembinaan hafalan Al-Qur'an, akhlak mulia, literasi keagamaan, serta kepemimpinan siswa beradab.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Tahfidz Al-Qur\'an & Karakter Mulia', 'Membimbing siswa mencapai target hafalan minimal 3–5 Juz selama jenjang SMP dengan metode mutqin, tahsin bersanad, dan pengamalan adab harian di sekolah maupun di rumah.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Robotika & Koding -->
+                <div data-category="sains" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Robotika dan Koding SMP" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-700 px-3 py-1 rounded-full shadow">Sains & Teknologi</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Robotika, IoT & Koding Pelajar</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Ekstrakurikuler perakitan mikrokontroler, pemrograman Python dasar, dan pembuatan proyek inovasi teknologi tepat guna.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Robotika, IoT & Koding Pelajar', 'Wadah eksplorasi STEM di mana siswa merakit sensor Arduino, membuat robot line-follower, serta mempelajari logika pemrograman Python dan pembuatan aplikasi web dasar.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5: Pramuka Garuda & Kepanduan -->
+                <div data-category="olahraga" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=700&q=80" alt="Pramuka Garuda & Olahraga" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-600 px-3 py-1 rounded-full shadow">Seni & Olahraga</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Pramuka Garuda, Futsal & Basket</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Ekstrakurikuler pembentuk kemandirian, ketangkasan fisik, sportivitas, dan kerja sama tim menuju kejuaraan O2SN.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Pramuka Garuda, Futsal & Basket', 'Melatih ketangguhan fisik, mental kepemimpinan, kemah bakti masyarakat, serta pembinaan intensif tim olahraga sekolah menuju turnamen tingkat kota dan provinsi.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6: Seni Tari & Paduan Suara -->
+                <div data-category="olahraga" class="prog-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1.5 transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=80" alt="Seni Musik dan Tari Nusantara" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-600 px-3 py-1 rounded-full shadow">Seni & Olahraga</span>
+                        </div>
+                        <div class="p-6 pb-3">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Paduan Suara, Tari & Desain Grafis</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                                Wadah apresiasi seni musik, tari kreasi daerah FLS2N, sinematografi pelajar, dan fotografi jurnalistik sekolah.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openProgramDetail('Paduan Suara, Tari & Desain Grafis', 'Mengasah kepekaan estetika, olah vokal harmoni, pelestarian tari tradisional Nusantara, serta produksi konten kreatif dan majalah dinding digital sekolah.')" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5">
+                            <span>Pelajari Detail Program</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 4 (PUTIH #ffffff): FASILITAS, PRESTASI & DIREKTORI GURU ================= -->
+    <section id="fasilitas" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] border-b border-slate-100 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">Sarana & Prasarana</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+                    Fasilitas Modern Penunjang <span class="text-blue-600">Pembelajaran</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-[#f0f6ff] dark:bg-slate-900 shadow-soft group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=700&q=80" alt="Smart Classroom" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 dark:text-white">Smart Bilingual Classroom</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Ruang kelas ber-AC dilengkapi Interactive Flat Panel, proyektor pintar, dan loker pribadi siswa.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-[#f0f6ff] dark:bg-slate-900 shadow-soft group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=700&q=80" alt="Lab Sains" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 dark:text-white">Lab STEM, IPA & Robotika</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Laboratorium praktikum Fisika, Biologi, serta studio perakitan robotik dan komputer berkecepatan tinggi.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-[#f0f6ff] dark:bg-slate-900 shadow-soft group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=700&q=80" alt="Perpustakaan Digital" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-900 dark:text-white">E-Library & Masjid Sekolah</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Perpustakaan nyaman dengan ribuan koleksi buku cetak/digital serta pusat kegiatan ibadah & tahfidz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 4 (PUTIH): PRESTASI SISWA & DIREKTORI GURU ================= -->
+    <section id="prestasi" class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] transition-colors">
+        <div class="max-w-6xl mx-auto rounded-3xl bg-royal-600 text-white p-8 sm:p-12 shadow-xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-5 space-y-3">
+                    <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-semibold uppercase tracking-wider">Kebanggaan Sekolah</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight">Jejak Prestasi Siswa SMPN 1 Nusantara</h2>
+                    <p class="text-blue-100 text-sm leading-relaxed">
+                        Setiap tahun, siswa-siswi kami berhasil menorehkan medali di ajang Olimpiade Sains Nasional (OSN), O2SN, dan FLS2N.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-2xl">
+                        <div class="text-amber-300 text-2xl mb-2"><i class="fa-solid fa-medal"></i></div>
+                        <div class="font-bold text-sm">Juara 1 OSN IPA</div>
+                        <p class="text-xs text-blue-100 mt-1">Tingkat Provinsi Tahun 2026 - Ananda Rizky Pratama (VIII-A)</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-2xl">
+                        <div class="text-amber-300 text-2xl mb-2"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="font-bold text-sm">Juara Umum Pramuka</div>
+                        <p class="text-xs text-blue-100 mt-1">Lomba Tingkat III Kwartir Cabang Tahun 2026</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-2xl">
+                        <div class="text-amber-300 text-2xl mb-2"><i class="fa-solid fa-award"></i></div>
+                        <div class="font-bold text-sm">Medali Perak FLS2N</div>
+                        <p class="text-xs text-blue-100 mt-1">Cabang Tari Kreasi Daerah Tingkat Nasional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DIREKTORI TENAGA PENDIDIK (LANJUTAN LATAR PUTIH) ================= -->
+    <section id="guru" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                    Tenaga Pendidik <span class="text-royal-600">SMP Negeri 1</span><br>
+                    Nusantara
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                    Dibimbing oleh bapak dan ibu guru profesional, ramah, serta berpengalaman di bidangnya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Guru 1 -->
+                <div class="bg-[#f0f6ff] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/80 dark:border-slate-800 group">
+                    <div class="h-60 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Guru Matematika" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">Dra. Siti Aminah, M.Si.</h4>
+                        <p class="text-xs text-royal-600 dark:text-royal-400 font-medium mt-1">Guru Matematika & Pembina OSN</p>
+                    </div>
+                </div>
+
+                <!-- Guru 2 -->
+                <div class="bg-[#f0f6ff] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/80 dark:border-slate-800 group">
+                    <div class="h-60 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Guru Bahasa Inggris" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">Ratna Puspitasari, S.Pd.</h4>
+                        <p class="text-xs text-royal-600 dark:text-royal-400 font-medium mt-1">Koordinator Bahasa Inggris</p>
+                    </div>
+                </div>
+
+                <!-- Guru 3 -->
+                <div class="bg-[#f0f6ff] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/80 dark:border-slate-800 group">
+                    <div class="h-60 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Guru IPA" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">Budi Santoso, S.Pd., Gr.</h4>
+                        <p class="text-xs text-royal-600 dark:text-royal-400 font-medium mt-1">Guru IPA Terpadu & Laboran</p>
+                    </div>
+                </div>
+
+                <!-- Guru 4 -->
+                <div class="bg-[#f0f6ff] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-blue-100/80 dark:border-slate-800 group">
+                    <div class="h-60 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Guru BK" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">Nadia Larasati, S.Psi.</h4>
+                        <p class="text-xs text-royal-600 dark:text-royal-400 font-medium mt-1">Bimbingan Konseling & Ramah Anak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 5 (SOFT BLUE): BERITA & AGENDA SEKOLAH ================= -->
+    <section id="berita" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#f0f6ff] dark:bg-slate-900/70 border-y border-blue-100/60 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                        Berita & Kegiatan <span class="text-royal-600">Terbaru</span>
+                    </h2>
+                    <p class="mt-2 text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                        Ikuti perkembangan kegiatan akademik dan kesiswaan di SMP Negeri 1 Nusantara.
+                    </p>
+                </div>
+                <button onclick="openPPDBModal()" class="self-start sm:self-auto px-5 py-2.5 rounded-full border border-royal-600 text-royal-600 dark:text-royal-400 text-xs sm:text-sm font-semibold hover:bg-royal-600 hover:text-white transition">
+                    Lihat Pengumuman PPDB
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                <!-- Berita 1 -->
+                <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-slate-100 dark:border-slate-800 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" alt="Kegiatan Belajar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-royal-600 text-white text-[10px] font-bold uppercase">Akademik</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar mr-1.5"></i> 12 Oktober 2026</div>
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-royal-600 transition leading-snug">
+                                Pameran Karya P5 Kurikulum Merdeka: Inovasi Daur Ulang Siswa Kelas VII & VIII
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5 leading-relaxed">
+                                Siswa menampilkan lebih dari 40 karya kreatif ramah lingkungan hasil kolaborasi lintas mata pelajaran...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="#berita" class="text-xs font-bold text-royal-600 dark:text-royal-400 flex items-center gap-1.5">
+                            Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Berita 2 -->
+                <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-slate-100 dark:border-slate-800 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&q=80" alt="Lomba Sains" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-bold uppercase">Prestasi</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar mr-1.5"></i> 28 September 2026</div>
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 transition leading-snug">
+                                Tim Robotik SMPN 1 Nusantara Raih Penghargaan Best Design Tingkat Nasional
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5 leading-relaxed">
+                                Membanggakan! Robot penyiram tanaman otomatis karya siswa ekstrakurikuler robotika berhasil memukau juri...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <a href="#berita" class="text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                            Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Berita 3 -->
+                <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-soft border border-slate-100 dark:border-slate-800 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="PPDB SMP" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-blue-700 text-white text-[10px] font-bold uppercase">PPDB 2027</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar mr-1.5"></i> 02 November 2026</div>
+                            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 transition leading-snug">
+                                Sosialisasi Jalur Zonasi, Afirmasi, dan Prestasi PPDB Tahun Ajaran Baru
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2.5 leading-relaxed">
+                                Panduan lengkap persiapan dokumen bagi orang tua/wali calon peserta didik baru lulusan Sekolah Dasar...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openPPDBModal()" class="text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                            Daftar Sekarang <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 6 (PUTIH): KONTAK & LOKASI ================= -->
+    <section id="kontak" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] transition-colors">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Info Kontak -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                        Hubungi <span class="text-royal-600">Kami</span>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Punya pertanyaan seputar pendaftaran siswa baru (PPDB), mutasi siswa, atau kunjungan studi? Silakan hubungi kami melalui formulir atau kontak resmi berikut.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-50 dark:bg-slate-800 text-royal-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Alamat Sekolah</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Jl. Pendidikan Raya No. 45, Kec. Nusantara Baru, Indonesia 68121</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-50 dark:bg-slate-800 text-royal-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Telepon & WhatsApp Tata Usaha</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">(021) 555-0192 / +62 812-3456-7890</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-50 dark:bg-slate-800 text-royal-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Email Resmi</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">info@smpn1nusantara.sch.id</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Pesan -->
+                <div class="lg:col-span-7">
+                    <form id="contactForm" onsubmit="submitContactForm(event)" class="bg-[#f0f6ff] dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-soft border border-blue-100 dark:border-slate-800 space-y-4">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Kirim Pesan / Pertanyaan</h3>
+                        
+                        <div id="contactFeedback" class="hidden p-4 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-medium">
+                            Terima kasih! Pesan Anda telah diterima oleh bagian Humas SMP Negeri 1 Nusantara.
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Nama Lengkap</label>
+                                <input type="text" required placeholder="Contoh: Budi Hartono" class="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-sm focus:outline-none focus:border-royal-600">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Nomor WhatsApp / Email</label>
+                                <input type="text" required placeholder="0812xxxx / email@anda.com" class="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-sm focus:outline-none focus:border-royal-600">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Keperluan</label>
+                            <select class="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-sm focus:outline-none focus:border-royal-600">
+                                <option>Informasi Pendaftaran Siswa Baru (PPDB)</option>
+                                <option>Permohonan Mutasi / Pindah Sekolah</option>
+                                <option>Kerja Sama / Kunjungan Instansi</option>
+                                <option>Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Pesan Anda</label>
+                            <textarea rows="3" required placeholder="Tuliskan pertanyaan Anda di sini..." class="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-sm focus:outline-none focus:border-royal-600"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-full bg-royal-600 hover:bg-royal-700 text-white font-semibold text-sm shadow-lg shadow-royal-600/25 transition">
+                            Kirim Pesan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+            <div class="space-y-4">
+                <a href="#" class="flex items-center gap-2 text-2xl font-extrabold tracking-tight font-heading">
+                    <div class="w-8 h-8 rounded-lg bg-royal-600 flex items-center justify-center text-white text-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="text-royal-500">SMPN</span><span class="text-white">1</span>
+                    </div>
+                </a>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    SMP Negeri 1 Nusantara mencetak generasi pembelajar sepanjang hayat yang beriman, cerdas, terampil, dan berwawasan global.
+                </p>
+                    <li><a href="#fasilitas" class="hover:text-white transition">Lab. IPA & Komputer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <p>&copy; 2026 SMP Negeri 1 Nusantara. Hak Cipta Dilindungi.</p>
+            <p class="mt-2 sm:mt-0">Terinspirasi dari Desain Modern UI Sekolah</p>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL 0: DETAIL PROGRAM & EKSTRAKURIKULER ================= -->
+    <div id="programDetailModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 space-y-4">
+            <div class="flex items-start justify-between gap-4">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center text-lg shadow-md shadow-blue-600/30 shrink-0">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <button onclick="closeProgramDetail()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400">Informasi Kurikulum & Ekskul</span>
+                <h3 id="programDetailTitle" class="text-lg font-extrabold text-slate-900 dark:text-white mt-1">Judul Program</h3>
+                <p id="programDetailDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed"></p>
+            </div>
+            <div class="pt-2 flex justify-end gap-2.5">
+                <button onclick="closeProgramDetail()" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                    Tutup
+                </button>
+                <button onclick="closeProgramDetail(); openPPDBModal();" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-600/20">
+                    Daftar Program Ini
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODAL 1: VIDEO PROFIL SEKOLAH ================= -->
+    <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 animate-fadeIn">
+            <div class="p-4 sm:px-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+                <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-play text-royal-600"></i> Video Profil SMP Negeri 1 Nusantara
+                </h3>
+                <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 text-center space-y-4">
+                <div class="aspect-video rounded-2xl bg-slate-900 relative overflow-hidden flex flex-col items-center justify-center text-white p-6" style="background-image: linear-gradient(rgba(17, 24, 39, 0.75), rgba(37, 54, 235, 0.75)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=80'); background-size: cover;">
+                    <div class="w-16 h-16 rounded-full bg-white text-royal-600 flex items-center justify-center text-2xl shadow-lg mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="text-lg sm:text-xl font-bold">Selamat Datang di Kampus Biru SMPN 1 Nusantara</h4>
+                    <p class="text-xs sm:text-sm text-blue-100 max-w-md mt-1">
+                        Menampilkan fasilitas ruang kelas pintar, laboratorium sains terpadu, kegiatan ekstrakurikuler, dan testimoni alumni.
+                    </p>
+                    <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 text-xs">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span> Durasi Tur Virtual: 03:45 Menit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODAL 2: PENDAFTARAN PPDB ONLINE ================= -->
+    <div id="ppdbModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 my-8">
+            <div class="p-5 sm:px-6 bg-blue-600 text-white flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] uppercase tracking-wider font-bold bg-white/20 px-2.5 py-0.5 rounded-full">Tahun Ajaran Baru</span>
+                    <h3 class="font-bold text-lg mt-1">Formulir Pra-Pendaftaran PPDB SMP</h3>
+                </div>
+                <button onclick="closePPDBModal()" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-blue-600 transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="submitPPDB(event)" class="p-6 space-y-4">
+                <div id="ppdbSuccess" class="hidden p-4 rounded-2xl bg-blue-50 dark:bg-blue-950/70 border border-blue-200 text-blue-700 dark:text-blue-300 text-xs space-y-1">
+                    <div class="font-bold text-sm"><i class="fa-solid fa-circle-check mr-1"></i> Pendaftaran Berhasil Dicatat!</div>
+                    <p>Nomor Bukti Pra-PPDB Anda: <strong id="regNumber">SMPN1-2026-8821</strong>. Panitia akan mengirimkan jadwal verifikasi berkas via WhatsApp.</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Lengkap Calon Siswa (Sesuai Ijazah SD)</label>
+                    <input type="text" required placeholder="Masukkan nama lengkap siswa" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">NISN (10 Digit)</label>
+                        <input type="text" required maxlength="10" placeholder="0098xxxxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Asal SD / MI</label>
+                        <input type="text" required placeholder="Contoh: SDN 1 Nusantara" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Jalur Pilihan PPDB</label>
+                        <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                            <option>Jalur Zonasi</option>
+                            <option>Jalur Prestasi Akademik/Non-Akademik</option>
+                            <option>Jalur Afirmasi</option>
+                            <option>Jalur Perpindahan Tugas Orang Tua</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">No. WhatsApp Orang Tua/Wali</label>
+                        <input type="tel" required placeholder="0812xxxxxxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    </div>
+                </div>
+
+                <div class="pt-2 flex justify-end gap-3">
+                    <button type="button" onclick="closePPDBModal()" class="px-5 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold">
+                        Tutup
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-full bg-royal-600 hover:bg-royal-700 text-white text-xs font-semibold shadow-md shadow-royal-600/20">
+                        Kirim Data Pendaftaran
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= MODAL 3: VISI & MISI LENGKAP ================= -->
+    <div id="visiMisiModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">Visi & Misi SMP Nusantara Unggul</h3>
+                <button onclick="closeVisiMisiModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-sm">
+                <div class="p-4 rounded-2xl bg-royal-50 dark:bg-royal-950/60 border border-royal-100 dark:border-royal-800">
+                    <h4 class="font-bold text-royal-600 dark:text-royal-400 uppercase text-xs tracking-wider">Visi Sekolah</h4>
+                    <p class="mt-1 font-semibold text-slate-800 dark:text-slate-100">
+                        "Terwujudnya Lulusan SMP yang Berakhlak Mulia, Unggul dalam Prestasi, Cakap Digital, dan Berbudaya Lingkungan."
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Misi Sekolah:</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc pl-5">
+                        <li>Menanamkan keimanan dan ketakwaan melalui pembiasaan ibadah harian di sekolah.</li>
+                        <li>Melaksanakan pembelajaran aktif, inovatif, dan menyenangkan berbasis Kurikulum Merdeka.</li>
+                        <li>Mengembangkan potensi akademik dan non-akademik siswa melalui pembinaan olimpiade dan ekstrakurikuler.</li>
+                        <li>Mewujudkan lingkungan sekolah yang aman, ramah anak, bebas perundungan (*anti-bullying*), dan hijau.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT INTERACTIVITY ================= -->
+    <script>
+        // 1. Toggle Light / Dark Mode
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const iconDesktop = document.getElementById('themeIcon');
+            const iconMobile = document.getElementById('themeIconMobile');
+
+            htmlEl.classList.toggle('dark');
+            const isDark = htmlEl.classList.contains('dark');
+
+            if (iconDesktop) {
+                iconDesktop.className = isDark ? 'fa-solid fa-sun text-sm' : 'fa-solid fa-moon text-sm';
+            }
+            if (iconMobile) {
+                iconMobile.className = isDark ? 'fa-solid fa-sun text-sm' : 'fa-solid fa-moon text-sm';
+            }
+        }
+
+        // 2. Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+        }
+
+        // 3. Filter Program & Ekstrakurikuler
+        function filterProgram(kategori) {
+            const tabs = document.querySelectorAll('.prog-tab');
+            const cards = document.querySelectorAll('.prog-card');
+
+            tabs.forEach(tab => {
+                tab.className = 'prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal-50 transition border border-blue-100 dark:border-slate-700';
+            });
+
+            const activeTab = document.getElementById('tab-' + kategori);
+            if (activeTab) {
+                activeTab.className = 'prog-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-royal-600 text-white transition shadow-md shadow-royal-600/20';
+            }
+
+            // Show/hide cards
+            cards.forEach(card => {
+                if (kategori === 'semua' || card.dataset.category === kategori) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // 4. Modals Handling
+        function openVideoModal() {
+            document.getElementById('videoModal').classList.remove('hidden');
+        }
+        function closeVideoModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+        }
+
+        function openPPDBModal() {
+            document.getElementById('ppdbModal').classList.remove('hidden');
+        }
+        function closePPDBModal() {
+            document.getElementById('ppdbModal').classList.add('hidden');
+        }
+
+        function openVisiMisiModal() {
+            document.getElementById('visiMisiModal').classList.remove('hidden');
+        }
+        function closeVisiMisiModal() {
+            document.getElementById('visiMisiModal').classList.add('hidden');
+        }
+
+        function openProgramDetail(title, desc) {
+            document.getElementById('programDetailTitle').textContent = title;
+            document.getElementById('programDetailDesc').textContent = desc;
+            document.getElementById('programDetailModal').classList.remove('hidden');
+        }
+        function closeProgramDetail() {
+            document.getElementById('programDetailModal').classList.add('hidden');
+        }
+
+        // 5. Form Submissions (Tanpa alert)
+        function submitPPDB(e) {
+            e.preventDefault();
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('regNumber').textContent = 'SMPN1-2026-' + randomNum;
+            document.getElementById('ppdbSuccess').classList.remove('hidden');
+            e.target.reset();
+        }
+
+        function submitContactForm(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('contactFeedback');
+            feedback.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 5000);
+        }
+
+        // 6. Fallback pintar berjenjang untuk memastikan gambar Kolaborasi matematika siswa SMP Indonesia-3.png tampil sempurna
+        const fallbackSources = [
+            './Kolaborasi matematika siswa SMP Indonesia-3.png',
+            'Kolaborasi%20matematika%20siswa%20SMP%20Indonesia-3.png',
+            'image_27759c.jpg',
+            'image_28563a.jpg',
+            'image_43fa1d.jpg',
+            'https://i.ibb.co.com/8412qLgW/image-43fa1d.jpg'
+        ];
+        let fallbackIdx = 0;
+
+        function handleHeroImageError(imgEl) {
+            // Cek apakah pengguna pernah menyimpan foto lokal di browser
+            const savedCustomHero = localStorage.getItem('smpn1_custom_hero_img');
+            if (savedCustomHero && imgEl.src !== savedCustomHero) {
+                imgEl.src = savedCustomHero;
+                return;
+            }
+            if (fallbackIdx < fallbackSources.length) {
+                imgEl.src = fallbackSources[fallbackIdx];
+                fallbackIdx++;
+            }
+        }
+
+        // Muat foto tersimpan dari localStorage jika sebelumnya pernah dipilih
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedCustomHero = localStorage.getItem('smpn1_custom_hero_img');
+            const heroImg = document.getElementById('hero-main-img');
+            if (savedCustomHero && heroImg) {
+                heroImg.src = savedCustomHero;
+            }
+        });
+
+        // 7. Ganti Gambar Hero Secara Langsung (File Input maupun Drag & Drop) + Simpan ke localStorage
+        function handleCustomHeroBg(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const heroImg = document.getElementById('hero-main-img');
+                if (heroImg) {
+                    heroImg.src = e.target.result;
+                }
+                try {
+                    localStorage.setItem('smpn1_custom_hero_img', e.target.result);
+                } catch (err) {
+                    // Abaikan jika ukuran gambar melebihi kuota localStorage
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Dukungan Drag & Drop Gambar langsung ke Area Hero
+        const heroSectionEl = document.getElementById('beranda');
+        if (heroSectionEl) {
+            heroSectionEl.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+            heroSectionEl.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    const file = e.dataTransfer.files[0];
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(ev) {
+                            const heroImg = document.getElementById('hero-main-img');
+                            if (heroImg) heroImg.src = ev.target.result;
+                            try {
+                                localStorage.setItem('smpn1_custom_hero_img', ev.target.result);
+                            } catch (err) {}
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

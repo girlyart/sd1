@@ -1,0 +1,447 @@
+import { Teacher, Program, Facility, Achievement, Article, AcademicEvent } from '../types';
+
+export const TEACHERS: Teacher[] = [
+  {
+    id: 't1',
+    name: 'Dra. Siti Aminah, M.Si.',
+    title: 'Guru Penggerak & Pembina OSN Matematika',
+    subject: 'Matematika & Aljabar',
+    department: 'mipa',
+    nip: '19750512 200003 2 003',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 22,
+    education: 'S2 Magister Pendidikan Sains Matematika, UNJ',
+  },
+  {
+    id: 't2',
+    name: 'Ratna Puspitasari, S.Pd., M.Ed.',
+    title: 'Koordinator Smart Bilingual Class',
+    subject: 'Bahasa Inggris & Cambridge Checkpoint',
+    department: 'bahasa',
+    nip: '19820314 200604 2 011',
+    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 16,
+    education: 'M.Ed. TESOL, University of Melbourne',
+  },
+  {
+    id: 't3',
+    name: 'Budi Santoso, S.Pd., Gr.',
+    title: 'Ketua Laboratorium STEM & Riset Remaja',
+    subject: 'IPA Terpadu & Fisika',
+    department: 'mipa',
+    nip: '19851120 200902 1 004',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 14,
+    education: 'S1 Pendidikan Fisika, Universitas Indonesia',
+  },
+  {
+    id: 't4',
+    name: 'Nadia Larasati, S.Psi.',
+    title: 'Koordinator Sekolah Ramah Anak & Konselor',
+    subject: 'Bimbingan Konseling (BK)',
+    department: 'agama',
+    nip: '19900808 201403 2 007',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 10,
+    education: 'S1 Psikologi Pendidikan, Universitas Padjadjaran',
+  },
+  {
+    id: 't5',
+    name: 'Ahmad Fauzi, M.Kom.',
+    title: 'Pembina Klub Robotika & Informatika Pelajar',
+    subject: 'Informatika & Robotika Modern',
+    department: 'mipa',
+    nip: '19880915 201101 1 008',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 12,
+    education: 'S2 Ilmu Komputer & Sistem Cerdas, ITB',
+  },
+  {
+    id: 't6',
+    name: 'Hj. Nurul Hidayati, S.Ag., M.Pd.I.',
+    title: 'Koordinator Program Tahfidz & Keagamaan',
+    subject: 'Pendidikan Agama Islam & Budi Pekerti',
+    department: 'agama',
+    nip: '19790422 200312 2 005',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 20,
+    education: 'S2 Pendidikan Islam, UIN Syarif Hidayatullah',
+  },
+  {
+    id: 't7',
+    name: 'Eko Prasetyo, S.Pd., M.Or.',
+    title: 'Pelatih Kontingen O2SN & Pembina Futsal',
+    subject: 'Pendidikan Jasmani & Olahraga (PJOK)',
+    department: 'olahraga',
+    nip: '19860105 201001 1 012',
+    photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 13,
+    education: 'S2 Magister Olahraga Prestasi, UNJ',
+  },
+  {
+    id: 't8',
+    name: 'Dewi Sekar Ayu, S.Sn.',
+    title: 'Pembina FLS2N & Sanggar Tari Nusantara',
+    subject: 'Seni Budaya & Tari Tradisional',
+    department: 'seni',
+    nip: '19921210 201602 2 009',
+    photo: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80',
+    experienceYears: 8,
+    education: 'S1 Pendidikan Seni Tari, Institut Kesenian Jakarta',
+  },
+];
+
+export const PROGRAMS: Program[] = [
+  {
+    id: 'prog-bilingual',
+    title: 'Smart Bilingual Class (Cambridge Companion)',
+    category: 'unggulan',
+    categoryLabel: 'Kelas Unggulan',
+    description: 'Pembelajaran Matematika, Sains, dan Bahasa Inggris dengan pengantar dwi-bahasa untuk kesiapan kompetisi global.',
+    detailedInfo: {
+      overview: 'Program kelas unggulan yang memadukan Kurikulum Merdeka Mandiri dengan pengantar Cambridge Lower Secondary Checkpoint. Siswa dilatih berdiskusi ilmiah, presentasi dwi-bahasa (Indonesia & Inggris), dan mengoperasikan perangkat laboratorium digital.',
+      highlights: [
+        'Dua bahasa pengantar (English & Indonesian) untuk Science, Math & English',
+        'Interactive Flat Panel Display di setiap ruang kelas',
+        'Native Speaker Session berkala bersama pengajar tamu internasional',
+        'Simulasi Ujian Internasional & Sertifikat Kemahiran Bahasa',
+      ],
+      schedule: 'Senin - Jumat | Terintegrasi Jam Sekolah Reguler',
+      mentor: 'Ratna Puspitasari, S.Pd., M.Ed. & Tim Guru Bilingual',
+      target: 'Mempersiapkan siswa masuk SMA/SMK Unggulan dan Boarding School ternama',
+    },
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'prog-osn',
+    title: 'Pembinaan Olimpiade Sains Nasional (OSN)',
+    category: 'sains',
+    categoryLabel: 'Sains & Teknologi',
+    description: 'Pembinaan intensif cabang Matematika, IPA, dan IPS dibimbing langsung oleh mentor peraih medali & dosen universitas.',
+    detailedInfo: {
+      overview: 'Pusat akselerasi bakat sains pelajar SMP Negeri 6 Jember. Calon peserta diseleksi melalui tes minat bakat dan dibina secara intensif melalui klinik sains, riset mandiri, serta simulasi soal standar olimpiade nasional dan internasional.',
+      highlights: [
+        'Klinik bedah soal tingkat kota, provinsi, hingga nasional',
+        'Praktikum eksperimen riil di Laboratorium STEM Terpadu',
+        'Bimbingan langsung dari dosen universitas mitra & alumni peraih medali',
+        'Kemah Riset Pelajar & Lomba Uji Coba Lintas Sekolah',
+      ],
+      schedule: 'Selasa & Kamis, 15.00 - 17.00 WIB + Klinik Sabtu',
+      mentor: 'Dra. Siti Aminah, M.Si. & Budi Santoso, S.Pd., Gr.',
+      target: 'Lolos kontingen provinsi dan meraih medali Emas/Perak di OSN Nasional',
+    },
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'prog-tahfidz',
+    title: 'Tahfidz Al-Qur\'an & Karakter Mulia',
+    category: 'karakter',
+    categoryLabel: 'Karakter & Religi',
+    description: 'Program pembinaan hafalan Al-Qur\'an juz 30, 29, 28 dengan tajwid mutqin, kajian adab, serta kepemimpinan berakhlak.',
+    detailedInfo: {
+      overview: 'Menyeimbangkan kecerdasan intelektual dengan kecerdasan spiritual dan moral. Program ini diselenggarakan di Masjid Al-Uswah sekolah setiap pagi sebelum jam pelajaran dan sore hari dengan bimbingan hafiz/hafizah bersanad.',
+      highlights: [
+        'Target hafalan minimal 3 juz mutqin selama jenjang SMP',
+        'Metode Talaqqi, Tasmi\' 1 Juz Sekali Duduk, dan Ujian Munaqasyah',
+        'Pembinaan karakter ramah anak, anti-perundungan, dan bakti sosial',
+        'Wisuda Tahfidz Akbar bersama orang tua di akhir semester',
+      ],
+      schedule: 'Setiap Hari 06.30 - 07.15 WIB & Ekstrakurikuler Sore',
+      mentor: 'Hj. Nurul Hidayati, S.Ag., M.Pd.I. & Ustadz Pembimbing',
+      target: 'Mencetak generasi cerdas cendekia yang hafal Al-Qur\'an dan berbudi pekerti santun',
+    },
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'prog-robotika',
+    title: 'Robotika, IoT & Koding Pelajar',
+    category: 'sains',
+    categoryLabel: 'Sains & Teknologi',
+    description: 'Merakit mikrokontroler Arduino/ESP32, logika pemrograman Python, perakitan robot line-tracer & proyek inovasi ramah lingkungan.',
+    detailedInfo: {
+      overview: 'Membekali generasi muda dengan kompetensi industri 4.0. Siswa belajar computational thinking, merancang algoritma koding, menyolder komponen elektronika, dan mencetak komponen rancangan menggunakan 3D printer di lab sekolah.',
+      highlights: [
+        'Praktek langsung kit mikrokontroler & sensor pintar Internet of Things (IoT)',
+        'Pemrograman Python & Scratch visual blocks untuk pemula',
+        'Rancangan robot maze-solver, robot pemadam api, dan smart agriculture mini',
+        'Partisipasi dalam International Islamic School Robot Olympiad & Kontes Robotika Nasional',
+      ],
+      schedule: 'Rabu & Jumat, 15.15 - 17.00 WIB',
+      mentor: 'Ahmad Fauzi, M.Kom. (Pakar Robotika & IoT)',
+      target: 'Menciptakan karya inovasi tepat guna dan juara turnamen robotik',
+    },
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'prog-pramuka',
+    title: 'Pramuka Garuda, Futsal & Basket (O2SN)',
+    category: 'olahraga',
+    categoryLabel: 'Seni & Olahraga',
+    description: 'Pendidikan kepanduan pembentuk karakter tangguh, serta tim olahraga prestasi untuk kompetisi O2SN dan kejuaraan pelajar.',
+    detailedInfo: {
+      overview: 'Pramuka Garuda Gugus Depan SMP Negeri 6 Jember merupakan salah satu pangkalan berprestasi tinggi di Kabupaten Jember. Ditunjang pembinaan cabang olahraga bola basket, futsal, bulutangkis, dan pencak silat dengan lapangan berstandar.',
+      highlights: [
+        'Pelatihan kepemimpinan lapangan, sandi, navigasi alam, dan pionering',
+        'Latihan rutin tim basket & futsal dengan pelatih berlisensi nasional',
+        'Kemah Pelajar Karakter Pancasila tahunan di Jember',
+        'Juara bertahan Lomba Tingkat III Kwartir Cabang Jember',
+      ],
+      schedule: 'Jumat (Pramuka Wajib) & Sabtu Pagi (Tim Prestasi)',
+      mentor: 'Eko Prasetyo, S.Pd., M.Or. & Pembina Gudep',
+      target: 'Mencetak atlet pelajar sportif dan Pramuka Garuda Teladan',
+    },
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'prog-seni',
+    title: 'Paduan Suara, Tari & Jurnalistik Kreatif',
+    category: 'olahraga',
+    categoryLabel: 'Seni & Olahraga',
+    description: 'Wadah seni vokal harmoni, tari kreasi daerah FLS2N, sinematografi pelajar, dan majalah dinding digital sekolah.',
+    detailedInfo: {
+      overview: 'Saluran ekspresi estetika bagi siswa yang gemar bernyanyi, menari, menulis, maupun membuat konten video edukatif. Didukung peralatan studio podcast, ruang tari berlantai kayu khusus, dan audio recording.',
+      highlights: [
+        'Olah vokal, paduan suara aransemen lagu daerah & lagu nasional',
+        'Sanggar tari kreasi tradisi peraih medali FLS2N tingkat nasional',
+        'Peliputan redaksi buletin sekolah & pengelolaan podcast "Suara Nusantara"',
+        'Pentas seni tahunan "Gita Nusantara Fest" di hadapan orang tua dan umum',
+      ],
+      schedule: 'Senin & Rabu, 15.30 - 17.00 WIB',
+      mentor: 'Dewi Sekar Ayu, S.Sn. & Tim Pembina Seni',
+      target: 'Meraih medali FLS2N dan menyalurkan bakat industri kreatif sejak dini',
+    },
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+  },
+];
+
+export const FACILITIES: Facility[] = [
+  {
+    id: 'f1',
+    title: 'Smart Bilingual Classroom',
+    category: 'akademik',
+    description: '30 ruang kelas modern ber-AC dilengkapi Interactive Smartboard, sistem audio jernih, loker pribadi siswa, dan koneksi Wi-Fi berkecepatan 300 Mbps.',
+    features: ['Interactive Flat Panel 75 inch', 'Full AC & Sirkulasi Udara Bersih', 'Loker Penyimpanan Pribadi', 'Kamera CCTV Keamanan 24 Jam'],
+    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'f2',
+    title: 'Laboratorium STEM & Studio Robotika',
+    category: 'laboratorium',
+    description: 'Ruang eksperimen komprehensif untuk Fisika, Biologi, Kimia, serta meja khusus perakitan robotika mikrokontroler dan 3D printer prototyping.',
+    features: ['Mikroskop Digital & Sensor Logger', 'Modul IoT & Robotika Kit Lengkap', 'Printer 3D & Alat Soldering Aman', 'Sistem Keselamatan Lab Standar K3'],
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'f3',
+    title: 'Perpustakaan Digital "Cahaya Ilmu"',
+    category: 'penunjang',
+    description: 'Perpustakaan dua lantai berkonsep lounge nyaman, menyediakan 15.000+ buku fisik, 50 tablet baca e-book, dan ruang diskusi hening ber-AC.',
+    features: ['Koleksi 15.000+ Buku & Ensiklopedia', 'Katalog Digital Online (OPAC)', 'Area Cozy Reading Pods', 'Ruang Diskusi & Presentasi Kelompok'],
+    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'f4',
+    title: 'Gelanggang Olahraga & Lapangan Multifungsi',
+    category: 'olahraga',
+    description: 'Lapangan terbuka dan semi-indoor berlapis cat sintetis anti-selip untuk pertandingan basket, futsal, voli, dan upacara bendera berkapasitas 1.000 siswa.',
+    features: ['Standar Dimensi Lapangan Resmi', 'Ring Basket Hidrolik & Gawang Futsal', 'Pencahayaan LED Malam Hari', 'Tribun Penonton Beratap'],
+    image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'f5',
+    title: 'Masjid Al-Uswah & Pusat Tahfidz',
+    category: 'penunjang',
+    description: 'Masjid sekolah yang megah dan asri dengan kapasitas 800 jamaah untuk sholat Dhuhur & Ashar berjamaah, tadarus pagi, dan kajian keputrian.',
+    features: ['Kapasitas 800 Jamaah Nyaman', 'Tempat Wudhu Luas & Bersih', 'Ruang Khusus Halaqah Tahfidz', 'Perpustakaan Kitab & Buku Religi'],
+    image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    id: 'f6',
+    title: 'Studio Multimedia & Podcast Sekolah',
+    category: 'laboratorium',
+    description: 'Studio kedap suara berperangkat kamera sinematik, mikrofon podcast profesional, dan komputer editing untuk pembelajaran konten digital dan majalah sekolah.',
+    features: ['Peredam Akustik Studio Profesional', 'Kamera 4K & Lighting Softbox', 'Mikrofon Shure Podcast Setup', 'PC Editing Spesifikasi Tinggi'],
+    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=900&q=80',
+  },
+];
+
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 'a1',
+    title: 'Juara 1 OSN IPA Terpadu',
+    competition: 'Olimpiade Sains Nasional (OSN) Tingkat Jawa Timur',
+    year: '2026',
+    level: 'Provinsi',
+    recipient: 'Ananda Rizky Pratama (Kelas VIII-A)',
+    category: 'sains',
+    icon: 'trophy',
+  },
+  {
+    id: 'a2',
+    title: 'Medali Perak FLS2N Tari Kreasi',
+    competition: 'Festival & Lomba Seni Siswa Nasional (FLS2N)',
+    year: '2026',
+    level: 'Nasional',
+    recipient: 'Tim Sanggar Tari Kusuma Jember (5 Siswi)',
+    category: 'seni',
+    icon: 'award',
+  },
+  {
+    id: 'a3',
+    title: 'Best Innovation & Autonomous Robot',
+    competition: 'National Youth Robotic Competition (NYRC)',
+    year: '2026',
+    level: 'Nasional',
+    recipient: 'Tim Robotik SMP 6 Jember (Farel & Aisyah)',
+    category: 'sains',
+    icon: 'medal',
+  },
+  {
+    id: 'a4',
+    title: 'Juara Umum Regu Putra Pramuka',
+    competition: 'Lomba Tingkat III Kwartir Cabang Jember',
+    year: '2026',
+    level: 'Kota',
+    recipient: 'Pasukan Garuda Gugus Depan SMP 6 Jember',
+    category: 'umum',
+    icon: 'shield',
+  },
+  {
+    id: 'a5',
+    title: 'Medali Emas O2SN Cabang Bulutangkis',
+    competition: 'Olimpiade Olahraga Siswa Nasional (O2SN)',
+    year: '2025',
+    level: 'Provinsi',
+    recipient: 'Kevin Maulana (Kelas IX-C)',
+    category: 'olahraga',
+    icon: 'medal',
+  },
+  {
+    id: 'a6',
+    title: 'Juara 1 Lomba Cerdas Cermat Bahasa Inggris',
+    competition: 'English Olympiad Inter-Junior High School Jawa Timur',
+    year: '2025',
+    level: 'Provinsi',
+    recipient: 'Team Bilingual SMPN 6 (Adelia, Rafi, Zahra)',
+    category: 'sains',
+    icon: 'trophy',
+  },
+];
+
+export const ARTICLES: Article[] = [
+  {
+    id: 'art-1',
+    title: 'Pameran Karya P5 Kurikulum Merdeka: 40+ Inovasi Daur Ulang & Eco-Enzyme Siswa',
+    excerpt: 'Siswa kelas VII dan VIII menampilkan karya berbasis kearifan lokal dan pelestarian lingkungan dalam Gelar Karya Proyek Penguatan Profil Pelajar Pancasila.',
+    content: `Kegiatan Gelar Karya P5 (Proyek Penguatan Profil Pelajar Pancasila) di SMP Negeri 6 Jember tahun 2026 berlangsung dengan sangat meriah di lapangan utama dan koridor sekolah. Dengan mengangkat tema "Gaya Hidup Berkelanjutan", para siswa mempersembahkan lebih dari 40 purwarupa ramah lingkungan.
+
+Di antara inovasi yang menarik perhatian dewan juri dan orang tua adalah pembuatan Eco-Enzyme dari sisa kulit buah kantin sekolah, purwarupa tempat sampah pintar pendeteksi plastik otomatis bertenaga sensor ultrasonik buatan klub robotika, serta instalasi busana daur ulang koran dan botol plastik yang ditampilkan dalam fashion show siswa.
+
+Kepala Sekolah, Dr. H. Hendra Wijaya, M.Pd., menyampaikan apresiasi setinggi-tingginya kepada seluruh wali kelas, guru pembimbing, dan siswa yang menunjukkan daya nalar kritis, gotong royong, dan kepedulian nyata terhadap krisis sampah perkotaan.`,
+    category: 'Kegiatan',
+    date: '12 Oktober 2026',
+    author: 'Tim Humas & Redaksi',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
+    readTime: '3 menit',
+  },
+  {
+    id: 'art-2',
+    title: 'Tim Robotik SMPN 6 Jember Raih Penghargaan Best Design Tingkat Nasional',
+    excerpt: 'Membanggakan! Prototipe robot penyiram otomatis hemat energi berbasis IoT hasil rancangan siswa kelas VIII berhasil memikat dewan juri kompetisi nasional.',
+    content: `Prestasi membanggakan kembali dipersembahkan oleh Tim Robotika SMP Negeri 6 Jember. Dalam ajang National Youth Robotic Competition 2026 yang diikuti oleh lebih dari 120 sekolah se-Indonesia, tim kita berhasil menyabet gelar bergengsi "Best Mechanical Design & Innovation".
+
+Robot yang dirancang bernama "AgroSmart-Bot", dirancang khusus untuk memantau kelembaban tanah dan mengairi tanaman secara presisi menggunakan sensor nirkabel berbasis mikrokontroler. 
+
+"Kami belajar koding Python dan soldering sirkuit sejak semester lalu di ekstrakurikuler. Sangat bangga inovasi kami diakui di tingkat nasional," ujar Farel Raditya, salah satu anggota tim saat diwawancarai.`,
+    category: 'Prestasi',
+    date: '28 September 2026',
+    author: 'Biro Prestasi Siswa',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+    readTime: '4 menit',
+  },
+  {
+    id: 'art-3',
+    title: 'Sosialisasi Alur & Tata Cara PPDB 2026/2027: Panduan Jalur Zonasi, Prestasi & Afirmasi',
+    excerpt: 'Panduan lengkap persiapan dokumen bagi calon peserta didik baru lulusan Sekolah Dasar (SD/MI) untuk mendaftar di SMP Negeri 6 Jember.',
+    content: `Menjelang dibukanya Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027, panitia PPDB SMP Negeri 6 Jember merilis petunjuk teknis pendaftaran resmi.
+
+Tahun ini, kuota penerimaan dibuka melalui empat jalur utama:
+1. Jalur Zonasi (50% Kuota): Berdasarkan jarak domisili kartu keluarga ke sekolah.
+2. Jalur Prestasi (30% Kuota): Terdiri dari nilai rapor rata-rata dan sertifikat kejuaraan resmi.
+3. Jalur Afirmasi (15% Kuota): Bagi siswa pemegang Kartu Indonesia Pintar (KIP) / DTKS.
+4. Jalur Perpindahan Tugas Orang Tua (5% Kuota).
+
+Pendaftaran dilakukan secara daring (online) tanpa dipungut biaya apapun (Gratis). Calon wali murid diimbau untuk menyiapkan berkas ijazah/surat keterangan lulus, akta kelahiran, dan kartu keluarga.`,
+    category: 'PPDB',
+    date: '02 November 2026',
+    author: 'Panitia PPDB 2026',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80',
+    readTime: '5 menit',
+  },
+];
+
+export const ACADEMIC_EVENTS: AcademicEvent[] = [
+  {
+    id: 'ev-1',
+    title: 'Sosialisasi & Bimbingan Teknis PPDB 2026 Daring',
+    date: '10 Nov 2026',
+    time: '08.30 - 11.30 WIB',
+    location: 'Aula Graha SMP 6 Jember & Zoom Meeting',
+    type: 'Akademik',
+  },
+  {
+    id: 'ev-2',
+    title: 'Simulasi Asesmen Nasional Berbasis Komputer (ANBK)',
+    date: '18 - 20 Nov 2026',
+    time: '07.30 - 13.00 WIB',
+    location: 'Lab Komputer 1 & 2',
+    type: 'Ujian',
+  },
+  {
+    id: 'ev-3',
+    title: 'Pentas Seni Tahunan & Pameran Gelar Karya Siswa',
+    date: '05 Des 2026',
+    time: '08.00 - 15.00 WIB',
+    location: 'Lapangan Utama & Panggung Terbuka',
+    type: 'Kesiswaan',
+  },
+  {
+    id: 'ev-4',
+    title: 'Penilaian Sumatif Akhir Semester (PSAS) Ganjil',
+    date: '08 - 15 Des 2026',
+    time: '07.00 - 12.00 WIB',
+    location: 'Semua Ruang Kelas VII - IX',
+    type: 'Ujian',
+  },
+  {
+    id: 'ev-5',
+    title: 'Pembagian Buku Laporan Hasil Belajar (Rapor) & Parenting',
+    date: '20 Des 2026',
+    time: '08.00 - 12.00 WIB',
+    location: 'Ruang Kelas Masing-masing Wali Kelas',
+    type: 'Akademik',
+  },
+];
+
+export const PPDB_FAQS = [
+  {
+    q: 'Apakah pendaftaran PPDB di SMP Negeri 6 Jember dipungut biaya?',
+    a: 'Tidak ada biaya pendaftaran (100% Gratis). Sekolah kami adalah sekolah negeri yang didanai penuh oleh Dana BOS Nasional dan BOS Daerah, tanpa pungutan uang gedung maupun uang formulir.',
+  },
+  {
+    q: 'Berapa total kuota rombongan belajar (rombel) untuk peserta didik baru?',
+    a: 'Untuk Tahun Ajaran 2026/2027, kami membuka 10 rombongan belajar dengan kapasitas 32 siswa per kelas, total kuota penerimaan adalah 320 siswa.',
+  },
+  {
+    q: 'Bagaimana bila calon siswa ingin mendaftar ke Kelas Smart Bilingual?',
+    a: 'Siswa yang telah dinyatakan lolos seleksi PPDB utama dapat mengikuti asesmen pemetaan minat, bakat, serta wawancara dasar bahasa Inggris untuk ditempatkan di rombel Smart Bilingual Class.',
+  },
+  {
+    q: 'Dokumen apa saja yang wajib disiapkan saat pendaftaran berkas?',
+    a: '1. Fotokopi Kartu Keluarga (KK), 2. Akta Kelahiran, 3. Surat Keterangan Lulus (SKL) / Ijazah SD, 4. Fotokopi Rapor kelas IV–VI, 5. Piagam kejuaraan resmi (khusus jalur prestasi).',
+  },
+  {
+    q: 'Apakah ada fasilitas beasiswa atau bantuan seragam bagi keluarga prasejahtera?',
+    a: 'Ya, melalui Jalur Afirmasi dan dukungan KIP/KJP Plus, siswa berhak mendapatkan seragam gratis, buku paket lengkap, serta santunan penunjang pendidikan.',
+  },
+];

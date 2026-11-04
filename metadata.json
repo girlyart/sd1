@@ -1,0 +1,6 @@
+{
+  "name": "SMP Negeri 1 Nusantara",
+  "description": "Website Resmi SMP Negeri 1 Nusantara - Sekolah Ramah Anak, Kurikulum Merdeka Mandiri & Akreditasi A Unggul Jakarta Selatan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
