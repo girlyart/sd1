@@ -85,18 +85,18 @@ export const TeachersSection: React.FC = () => {
               className="bg-[#f0f6ff]/70 dark:bg-slate-900 rounded-xl overflow-hidden shadow-xs hover:shadow-lg border border-blue-100/70 dark:border-slate-800 hover:-translate-y-1 transition-all duration-200 group cursor-pointer flex flex-col justify-between"
             >
               <div>
-                {/* Tinggi Foto Dibuat Lebih Kecil (h-36 sm:h-40) */}
-                <div className="h-36 sm:h-40 overflow-hidden bg-slate-100 relative">
+                {/* Foto Persegi (1:1 / Aspect-Square) dengan Wajah Guru Terlihat Penuh */}
+                <div className="w-full aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
                   <img
                     src={teacher.photo}
                     alt={teacher.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80';
+                        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=face&w=600&h=600&q=85';
                     }}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded bg-blue-600/90 text-white text-[9px] font-bold">
+                  <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-blue-600/90 backdrop-blur-xs text-white text-[10px] font-bold shadow-xs">
                     {teacher.experienceYears}+ Thn
                   </div>
                 </div>
@@ -135,9 +135,9 @@ export const TeachersSection: React.FC = () => {
                   alt={selectedTeacher.name}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
-                      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80';
+                      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=face&w=600&h=600&q=85';
                   }}
-                  className="w-14 h-14 rounded-2xl object-cover border-2 border-blue-600"
+                  className="w-16 h-16 rounded-2xl object-cover object-[center_20%] border-2 border-blue-600 shadow-sm shrink-0"
                 />
                 <div>
                   <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
