@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   ShieldAlert,
   MessageSquare,
+  Sparkles,
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
@@ -36,127 +37,141 @@ export const ContactSection: React.FC = () => {
   return (
     <section
       id="kontak"
-      className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05070e] transition-colors"
+      className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white overflow-hidden transition-colors"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* Kolom Kiri: Informasi Kontak & Layanan */}
+      {/* Background Graphic Glow Accents */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Kolom Kiri: Informasi Kontak & Layanan Berwarna Biru dengan Teks Putih */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
-                Layanan & Informasi
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                Layanan & Informasi Resmi
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
-                Hubungi <span className="text-blue-600">Kami</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 leading-tight font-heading">
+                Hubungi <span className="text-amber-300">Kami</span>
               </h2>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              <p className="mt-3 text-sm text-blue-100 leading-relaxed font-normal">
                 Punya pertanyaan seputar penerimaan siswa baru (PPDB), mutasi siswa,
                 kunjungan studi banding, atau layanan konseling? Tim Tata Usaha dan
-                Humas siap melayani Anda.
+                Humas SMP Negeri Jember siap melayani Anda dengan ramah dan cepat.
               </p>
             </div>
 
-            <div className="space-y-4 pt-1">
-              <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#f0f6ff]/60 dark:bg-slate-900 border border-blue-100/60 dark:border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-blue-600/20">
-                  <MapPin className="w-5 h-5" />
+            <div className="space-y-3.5 pt-1">
+              {/* Alamat */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner">
+                  <MapPin className="w-5 h-5 text-amber-300" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider text-slate-400">
+                  <h4 className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">
                     Alamat Kampus Sekolah
                   </h4>
-                  <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">
+                  <p className="text-xs sm:text-sm font-semibold text-white mt-0.5 leading-snug">
                     Jl. Karimata No. 58, Kec. Sumbersari, Jember, Jawa Timur 68121
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#f0f6ff]/60 dark:bg-slate-900 border border-blue-100/60 dark:border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-blue-600/20">
-                  <Phone className="w-5 h-5" />
+              {/* Telepon */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner">
+                  <Phone className="w-5 h-5 text-amber-300" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider text-slate-400">
+                  <h4 className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">
                     Telepon & WhatsApp Tata Usaha
                   </h4>
-                  <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5 font-mono">
+                  <p className="text-xs sm:text-sm font-semibold text-white mt-0.5 font-mono">
                     (0331) 555-0192 / +62 812-3456-7890
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#f0f6ff]/60 dark:bg-slate-900 border border-blue-100/60 dark:border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-blue-600/20">
-                  <Mail className="w-5 h-5" />
+              {/* Email */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner">
+                  <Mail className="w-5 h-5 text-amber-300" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider text-slate-400">
+                  <h4 className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">
                     Email Resmi Sekolah
                   </h4>
-                  <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5 font-mono">
-                    info@smpn6jember.sch.id
+                  <p className="text-xs sm:text-sm font-semibold text-white mt-0.5 font-mono">
+                    info@smpnjember.sch.id
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-900/60">
-                <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-amber-500/20">
+              {/* Posko Ramah Anak */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-amber-500/20 backdrop-blur-md border border-amber-400/30">
+                <div className="w-11 h-11 rounded-xl bg-amber-400 text-slate-900 flex items-center justify-center shrink-0 shadow-md">
                   <ShieldAlert className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">
-                    Posko Ramah Anak & Anti-Bullying
+                  <h4 className="text-[11px] font-bold text-amber-300 uppercase tracking-wider">
+                    Posko Ramah Anak & Hotline BK
                   </h4>
-                  <p className="text-xs text-amber-900 dark:text-amber-200 mt-0.5 font-medium">
-                    Hotline Kerahasiaan BK: +62 813-8899-7711 (Tersedia 24 Jam untuk keamanan siswa)
+                  <p className="text-xs text-white mt-0.5 font-medium leading-relaxed">
+                    Kerahasiaan terjamin: +62 813-8899-7711 (Tersedia 24 Jam)
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Jam Operasional */}
-            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs">
-              <span className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 mb-1.5">
-                <Clock className="w-4 h-4 text-blue-600" /> Jam Kerja Pelayanan:
+            <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-xs text-white">
+              <span className="font-bold text-white flex items-center gap-1.5 mb-2">
+                <Clock className="w-4 h-4 text-amber-300" /> Jam Pelayanan Administrasi:
               </span>
-              <div className="flex justify-between text-slate-500 dark:text-slate-400 py-0.5">
+              <div className="flex justify-between text-blue-100 py-1 border-b border-white/10">
                 <span>Senin - Kamis</span>
-                <span className="font-semibold text-slate-800 dark:text-slate-200">07.00 - 15.30 WIB</span>
+                <span className="font-bold text-white">07.00 - 15.30 WIB</span>
               </div>
-              <div className="flex justify-between text-slate-500 dark:text-slate-400 py-0.5">
+              <div className="flex justify-between text-blue-100 py-1 border-b border-white/10">
                 <span>Jumat</span>
-                <span className="font-semibold text-slate-800 dark:text-slate-200">07.00 - 15.00 WIB</span>
+                <span className="font-bold text-white">07.00 - 15.00 WIB</span>
               </div>
-              <div className="flex justify-between text-slate-500 dark:text-slate-400 py-0.5">
+              <div className="flex justify-between text-blue-100 py-1">
                 <span>Sabtu - Minggu</span>
-                <span className="text-rose-500 font-semibold">Tutup (Khusus Ekskul Terjadwal)</span>
+                <span className="text-amber-300 font-semibold">Tutup (Khusus Ekstrakurikuler)</span>
               </div>
             </div>
           </div>
 
-          {/* Kolom Kanan: Form Kirim Pesan & Mini Peta Lokasi */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Kolom Kanan: Form Kirim Pesan Berlatar Kaca Biru dengan Teks Putih */}
+          <div className="lg:col-span-7">
             <form
               onSubmit={handleSubmit}
-              className="bg-[#f0f6ff] dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-md border border-blue-100 dark:border-slate-800 space-y-4"
+              className="bg-white/10 backdrop-blur-xl p-6 sm:p-9 rounded-3xl shadow-2xl border border-white/20 space-y-4"
             >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
-                <span>Kirim Pesan / Pertanyaan Resmi</span>
-              </h3>
+              <div className="border-b border-white/15 pb-4">
+                <h3 className="text-xl font-extrabold text-white flex items-center gap-2.5">
+                  <MessageSquare className="w-5 h-5 text-amber-300" />
+                  <span>Kirim Pesan / Pertanyaan Resmi</span>
+                </h3>
+                <p className="text-xs text-blue-100 mt-1">
+                  Sampaikan pertanyaan atau permohonan informasi Anda langsung ke bagian Tata Usaha sekolah.
+                </p>
+              </div>
 
               {submitted && (
-                <div className="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-xs flex items-center gap-2.5 animate-in fade-in">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                <div className="p-4 rounded-2xl bg-emerald-500/20 backdrop-blur-md border border-emerald-400/40 text-emerald-100 text-xs flex items-center gap-2.5 animate-in fade-in">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-300 shrink-0" />
                   <span>
-                    Terima kasih! Pesan Anda telah diterima oleh Sekretariat Humas SMP 6 Jember. Tim kami akan merespons melalui WhatsApp/Email.
+                    Terima kasih! Pesan Anda telah diterima oleh Sekretariat Humas SMP Negeri Jember. Tim kami akan segera merespons melalui WhatsApp atau Email.
                   </span>
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-white mb-1.5">
                     Nama Lengkap *
                   </label>
                   <input
@@ -167,11 +182,11 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:border-blue-600"
+                    className="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-white mb-1.5">
                     Nomor WhatsApp / Email *
                   </label>
                   <input
@@ -182,21 +197,21 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, contact: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:border-blue-600"
+                    className="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-sm"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                  Keperluan / Topik *
+                <label className="block text-xs font-semibold text-white mb-1.5">
+                  Keperluan / Topik Informasi *
                 </label>
                 <select
                   value={formData.purpose}
                   onChange={(e) =>
                     setFormData({ ...formData, purpose: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:border-blue-600"
+                  className="w-full px-4 py-3 rounded-xl bg-white text-slate-900 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-sm"
                 >
                   <option value="Informasi Pendaftaran Siswa Baru (PPDB)">
                     Informasi Pendaftaran Siswa Baru (PPDB 2026)
@@ -210,33 +225,35 @@ export const ContactSection: React.FC = () => {
                   <option value="Konseling Ramah Anak">
                     Layanan Konseling & Bimbingan Belajar Siswa
                   </option>
-                  <option value="Lainnya">Lainnya</option>
+                  <option value="Lainnya">Lainnya / Pertanyaan Umum</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                  Pesan Anda *
+                <label className="block text-xs font-semibold text-white mb-1.5">
+                  Isi Pesan Anda *
                 </label>
                 <textarea
-                  rows={3}
+                  rows={4}
                   required
                   placeholder="Tuliskan pertanyaan atau permohonan informasi Anda di sini..."
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-200/70 dark:border-slate-700 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:border-blue-600"
+                  className="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-300 shadow-sm"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full sm:w-auto px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-600/25 transition flex items-center justify-center gap-2"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>Kirim Pesan Sekarang</span>
-              </button>
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white hover:bg-blue-50 text-blue-800 font-extrabold text-xs shadow-xl shadow-black/20 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center justify-center gap-2.5 cursor-pointer"
+                >
+                  <Send className="w-4 h-4 text-blue-700" />
+                  <span>Kirim Pesan Sekarang</span>
+                </button>
+              </div>
             </form>
           </div>
         </div>

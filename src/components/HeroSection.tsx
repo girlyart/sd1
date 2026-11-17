@@ -20,12 +20,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [heroImage, setHeroImage] = useState<string>(DEFAULT_HERO_IMG);
 
   useEffect(() => {
-    const saved = localStorage.getItem('smpn6_custom_hero_img');
+    const saved = localStorage.getItem('smpnjember_custom_hero_img');
     if (saved && saved.startsWith('data:image')) {
       setHeroImage(saved);
     } else {
       setHeroImage(DEFAULT_HERO_IMG);
-      localStorage.setItem('smpn6_custom_hero_img', DEFAULT_HERO_IMG);
+      localStorage.setItem('smpnjember_custom_hero_img', DEFAULT_HERO_IMG);
     }
   }, []);
 
@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none flex items-center justify-center">
         <img
           src={heroImage}
-          alt="Belajar Bersama Siswa SMP 6 Jember di Perpustakaan"
+          alt="Belajar Bersama Siswa SMP Negeri Jember di Perpustakaan"
           className="w-full h-full object-cover object-center select-none transition-all duration-500 opacity-40 dark:opacity-30 filter contrast-105"
           onError={() => setHeroImage(DEFAULT_HERO_IMG)}
         />
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Judul Utama Tengah */}
         <div className="space-y-2">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] text-slate-900 dark:text-white font-heading drop-shadow-sm">
-            SMP Negeri 6 <br />
+            SMP Negeri <br />
             <span className="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-600 dark:from-blue-400 dark:via-indigo-400 dark:to-blue-300 bg-clip-text text-transparent">
               Jember
             </span>

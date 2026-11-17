@@ -119,7 +119,7 @@ export const PROGRAMS: Program[] = [
     categoryLabel: 'Sains & Teknologi',
     description: 'Pembinaan intensif cabang Matematika, IPA, dan IPS dibimbing langsung oleh mentor peraih medali & dosen universitas.',
     detailedInfo: {
-      overview: 'Pusat akselerasi bakat sains pelajar SMP Negeri 6 Jember. Calon peserta diseleksi melalui tes minat bakat dan dibina secara intensif melalui klinik sains, riset mandiri, serta simulasi soal standar olimpiade nasional dan internasional.',
+      overview: 'Pusat akselerasi bakat sains pelajar SMP Negeri Jember. Calon peserta diseleksi melalui tes minat bakat dan dibina secara intensif melalui klinik sains, riset mandiri, serta simulasi soal standar olimpiade nasional dan internasional.',
       highlights: [
         'Klinik bedah soal tingkat kota, provinsi, hingga nasional',
         'Praktikum eksperimen riil di Laboratorium STEM Terpadu',
@@ -179,7 +179,7 @@ export const PROGRAMS: Program[] = [
     categoryLabel: 'Seni & Olahraga',
     description: 'Pendidikan kepanduan pembentuk karakter tangguh, serta tim olahraga prestasi untuk kompetisi O2SN dan kejuaraan pelajar.',
     detailedInfo: {
-      overview: 'Pramuka Garuda Gugus Depan SMP Negeri 6 Jember merupakan salah satu pangkalan berprestasi tinggi di Kabupaten Jember. Ditunjang pembinaan cabang olahraga bola basket, futsal, bulutangkis, dan pencak silat dengan lapangan berstandar.',
+      overview: 'Pramuka Garuda Gugus Depan SMP Negeri Jember merupakan salah satu pangkalan berprestasi tinggi di Kabupaten Jember. Ditunjang pembinaan cabang olahraga bola basket, futsal, bulutangkis, dan pencak silat dengan lapangan berstandar.',
       highlights: [
         'Pelatihan kepemimpinan lapangan, sandi, navigasi alam, dan pionering',
         'Latihan rutin tim basket & futsal dengan pelatih berlisensi nasional',
@@ -292,7 +292,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'National Youth Robotic Competition (NYRC)',
     year: '2026',
     level: 'Nasional',
-    recipient: 'Tim Robotik SMP 6 Jember (Farel & Aisyah)',
+    recipient: 'Tim Robotik SMP Negeri Jember (Farel & Aisyah)',
     category: 'sains',
     icon: 'medal',
   },
@@ -302,7 +302,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Lomba Tingkat III Kwartir Cabang Jember',
     year: '2026',
     level: 'Kota',
-    recipient: 'Pasukan Garuda Gugus Depan SMP 6 Jember',
+    recipient: 'Pasukan Garuda Gugus Depan SMP Negeri Jember',
     category: 'umum',
     icon: 'shield',
   },
@@ -318,13 +318,43 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: 'a6',
-    title: 'Juara 1 Lomba Cerdas Cermat Bahasa Inggris',
+    title: 'Juara 1 Cerdas Cermat Bahasa Inggris',
     competition: 'English Olympiad Inter-Junior High School Jawa Timur',
     year: '2025',
     level: 'Provinsi',
-    recipient: 'Team Bilingual SMPN 6 (Adelia, Rafi, Zahra)',
+    recipient: 'Team Bilingual SMP Negeri Jember (Adelia, Rafi, Zahra)',
     category: 'sains',
     icon: 'trophy',
+  },
+  {
+    id: 'a7',
+    title: 'Juara 1 Turnamen Basket Pelajar Cup',
+    competition: 'Kejuaraan Bola Basket Antar Pelajar SMP Kabupaten Jember',
+    year: '2026',
+    level: 'Kota',
+    recipient: 'Tim Basket Putra SMP Negeri Jember',
+    category: 'olahraga',
+    icon: 'trophy',
+  },
+  {
+    id: 'a8',
+    title: 'Medali Emas MHQ Tahfidz Al-Qur\'an',
+    competition: 'Musabaqah Hifdzil Qur\'an Tingkat Jawa Timur',
+    year: '2026',
+    level: 'Provinsi',
+    recipient: 'Muhammad Ilham Robbani (Kelas VII-B)',
+    category: 'umum',
+    icon: 'award',
+  },
+  {
+    id: 'a9',
+    title: 'Juara 2 Desain Poster Digital FLS2N',
+    competition: 'Festival dan Lomba Seni Siswa Nasional (FLS2N)',
+    year: '2025',
+    level: 'Nasional',
+    recipient: 'Clarissa Amanda (Kelas IX-A)',
+    category: 'seni',
+    icon: 'medal',
   },
 ];
 
@@ -333,7 +363,7 @@ export const ARTICLES: Article[] = [
     id: 'art-1',
     title: 'Pameran Karya P5 Kurikulum Merdeka: 40+ Inovasi Daur Ulang & Eco-Enzyme Siswa',
     excerpt: 'Siswa kelas VII dan VIII menampilkan karya berbasis kearifan lokal dan pelestarian lingkungan dalam Gelar Karya Proyek Penguatan Profil Pelajar Pancasila.',
-    content: `Kegiatan Gelar Karya P5 (Proyek Penguatan Profil Pelajar Pancasila) di SMP Negeri 6 Jember tahun 2026 berlangsung dengan sangat meriah di lapangan utama dan koridor sekolah. Dengan mengangkat tema "Gaya Hidup Berkelanjutan", para siswa mempersembahkan lebih dari 40 purwarupa ramah lingkungan.
+    content: `Kegiatan Gelar Karya P5 (Proyek Penguatan Profil Pelajar Pancasila) di SMP Negeri Jember tahun 2026 berlangsung dengan sangat meriah di lapangan utama dan koridor sekolah. Dengan mengangkat tema "Gaya Hidup Berkelanjutan", para siswa mempersembahkan lebih dari 40 purwarupa ramah lingkungan.
 
 Di antara inovasi yang menarik perhatian dewan juri dan orang tua adalah pembuatan Eco-Enzyme dari sisa kulit buah kantin sekolah, purwarupa tempat sampah pintar pendeteksi plastik otomatis bertenaga sensor ultrasonik buatan klub robotika, serta instalasi busana daur ulang koran dan botol plastik yang ditampilkan dalam fashion show siswa.
 
@@ -346,9 +376,9 @@ Kepala Sekolah, Dr. H. Hendra Wijaya, M.Pd., menyampaikan apresiasi setinggi-tin
   },
   {
     id: 'art-2',
-    title: 'Tim Robotik SMPN 6 Jember Raih Penghargaan Best Design Tingkat Nasional',
+    title: 'Tim Robotik SMP Negeri Jember Raih Penghargaan Best Design Tingkat Nasional',
     excerpt: 'Membanggakan! Prototipe robot penyiram otomatis hemat energi berbasis IoT hasil rancangan siswa kelas VIII berhasil memikat dewan juri kompetisi nasional.',
-    content: `Prestasi membanggakan kembali dipersembahkan oleh Tim Robotika SMP Negeri 6 Jember. Dalam ajang National Youth Robotic Competition 2026 yang diikuti oleh lebih dari 120 sekolah se-Indonesia, tim kita berhasil menyabet gelar bergengsi "Best Mechanical Design & Innovation".
+    content: `Prestasi membanggakan kembali dipersembahkan oleh Tim Robotika SMP Negeri Jember. Dalam ajang National Youth Robotic Competition 2026 yang diikuti oleh lebih dari 120 sekolah se-Indonesia, tim kita berhasil menyabet gelar bergengsi "Best Mechanical Design & Innovation".
 
 Robot yang dirancang bernama "AgroSmart-Bot", dirancang khusus untuk memantau kelembaban tanah dan mengairi tanaman secara presisi menggunakan sensor nirkabel berbasis mikrokontroler. 
 
@@ -362,8 +392,8 @@ Robot yang dirancang bernama "AgroSmart-Bot", dirancang khusus untuk memantau ke
   {
     id: 'art-3',
     title: 'Sosialisasi Alur & Tata Cara PPDB 2026/2027: Panduan Jalur Zonasi, Prestasi & Afirmasi',
-    excerpt: 'Panduan lengkap persiapan dokumen bagi calon peserta didik baru lulusan Sekolah Dasar (SD/MI) untuk mendaftar di SMP Negeri 6 Jember.',
-    content: `Menjelang dibukanya Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027, panitia PPDB SMP Negeri 6 Jember merilis petunjuk teknis pendaftaran resmi.
+    excerpt: 'Panduan lengkap persiapan dokumen bagi calon peserta didik baru lulusan Sekolah Dasar (SD/MI) untuk mendaftar di SMP Negeri Jember.',
+    content: `Menjelang dibukanya Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027, panitia PPDB SMP Negeri Jember merilis petunjuk teknis pendaftaran resmi.
 
 Tahun ini, kuota penerimaan dibuka melalui empat jalur utama:
 1. Jalur Zonasi (50% Kuota): Berdasarkan jarak domisili kartu keluarga ke sekolah.
@@ -386,7 +416,7 @@ export const ACADEMIC_EVENTS: AcademicEvent[] = [
     title: 'Sosialisasi & Bimbingan Teknis PPDB 2026 Daring',
     date: '10 Nov 2026',
     time: '08.30 - 11.30 WIB',
-    location: 'Aula Graha SMP 6 Jember & Zoom Meeting',
+    location: 'Aula Graha SMP Negeri Jember & Zoom Meeting',
     type: 'Akademik',
   },
   {
@@ -425,7 +455,7 @@ export const ACADEMIC_EVENTS: AcademicEvent[] = [
 
 export const PPDB_FAQS = [
   {
-    q: 'Apakah pendaftaran PPDB di SMP Negeri 6 Jember dipungut biaya?',
+    q: 'Apakah pendaftaran PPDB di SMP Negeri Jember dipungut biaya?',
     a: 'Tidak ada biaya pendaftaran (100% Gratis). Sekolah kami adalah sekolah negeri yang didanai penuh oleh Dana BOS Nasional dan BOS Daerah, tanpa pungutan uang gedung maupun uang formulir.',
   },
   {

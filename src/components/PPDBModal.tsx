@@ -60,7 +60,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
     e.preventDefault();
 
     const randomNum = Math.floor(1000 + Math.random() * 9000);
-    const regId = `SMPN6-2026-${randomNum}`;
+    const regId = `SMPNJ-2026-${randomNum}`;
 
     const newApp: PPDBApplication = {
       registrationId: regId,
@@ -124,10 +124,10 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
 
       if (match) {
         setFoundStatus(match);
-      } else if (term === 'SMPN1-2026-8821' || term === '0098765432') {
+      } else if (term === 'SMPNJ-2026-8821' || term === 'SMPN1-2026-8821' || term === '0098765432') {
         // Demo mock record
         setFoundStatus({
-          registrationId: 'SMPN1-2026-8821',
+          registrationId: 'SMPNJ-2026-8821',
           studentName: 'Aisyah Putri Azzahra',
           nisn: '0098765432',
           birthDate: '2013-05-14',
@@ -172,7 +172,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                 </span>
               </div>
               <h3 className="font-extrabold text-base sm:text-lg mt-0.5">
-                Portal PPDB Online SMP 6 Jember
+                Portal PPDB Online SMP Negeri Jember
               </h3>
             </div>
           </div>
@@ -251,7 +251,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                           KARTU BUKTI PRA-PENDAFTARAN PPDB 2026
                         </span>
                         <h4 className="font-black text-xl text-slate-900 dark:text-white">
-                          SMP NEGERI 6 JEMBER
+                          SMP NEGERI JEMBER
                         </h4>
                         <p className="text-[10px] text-slate-400">
                           Jl. Karimata No. 58, Sumbersari, Jember, Jawa Timur
@@ -575,7 +575,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                   Pencarian Status Verifikasi & Seleksi
                 </h4>
                 <p className="text-slate-500 dark:text-slate-400">
-                  Masukkan No. Bukti Registrasi (contoh: <code>SMPN1-2026-8821</code>) atau 10 digit NISN calon siswa.
+                  Masukkan No. Bukti Registrasi (contoh: <code>SMPNJ-2026-8821</code>) atau 10 digit NISN calon siswa.
                 </p>
               </div>
 
@@ -628,7 +628,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                 </div>
               ) : (
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-500 text-center">
-                  💡 Tips demo: Anda dapat mencoba mengecek nomor contoh <code>SMPN1-2026-8821</code> atau mendaftar baru.
+                  💡 Tips demo: Anda dapat mencoba mengecek nomor contoh <code>SMPNJ-2026-8821</code> atau mendaftar baru.
                 </div>
               )}
             </div>

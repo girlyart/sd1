@@ -34,7 +34,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ onOpenPPDB }) => {
               Berita & Agenda <span className="text-blue-600">Sekolah</span>
             </h2>
             <p className="mt-1 text-sm sm:text-base text-slate-500 dark:text-slate-400">
-              Ikuti perkembangan kegiatan akademik, prestasi siswa, dan kalender kegiatan di SMP 6 Jember.
+              Ikuti perkembangan kegiatan akademik, prestasi siswa, dan kalender kegiatan di SMP Negeri Jember.
             </p>
           </div>
 
@@ -209,7 +209,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ onOpenPPDB }) => {
 
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <span className="text-xs text-slate-400 italic">
-                    Sumber: Redaksi Resmi SMP 6 Jember
+                    Sumber: Redaksi Resmi SMP Negeri Jember
                   </span>
                   <div className="flex gap-2">
                     <button

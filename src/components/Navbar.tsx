@@ -75,11 +75,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               (0331) 555-0192
             </a>
             <a
-              href="mailto:info@smpn6jember.sch.id"
+              href="mailto:info@smpnjember.sch.id"
               className="flex items-center gap-1.5 hover:text-white transition"
             >
               <Mail className="w-3.5 h-3.5 text-blue-300" />
-              info@smpn6jember.sch.id
+              info@smpnjember.sch.id
             </a>
           </div>
         </div>
@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div className="leading-tight">
               <span className="block text-lg sm:text-[19px] font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
-                SMP Negeri 6 Jember
+                SMP Negeri Jember
               </span>
               <span className="block text-[10px] font-bold tracking-wider uppercase text-blue-600 dark:text-blue-400">
                 AKREDITASI A UNGGUL • KABUPATEN JEMBER

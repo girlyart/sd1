@@ -33,13 +33,13 @@ export const Footer: React.FC<FooterProps> = ({
               <GraduationCap className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-blue-500">SMPN</span>
-              <span className="text-white"> 6 Jember</span>
+              <span className="text-blue-500">SMP Negeri</span>
+              <span className="text-white"> Jember</span>
             </div>
           </button>
 
           <p className="text-xs leading-relaxed text-slate-400">
-            SMP Negeri 6 Jember mencetak generasi pembelajar sepanjang hayat
+            SMP Negeri Jember mencetak generasi pembelajar sepanjang hayat
             yang beriman, berkarakter mulia, cakap digital, dan siap bersaing di
             kancah global.
           </p>
@@ -196,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-blue-500 shrink-0" />
-              <span>info@smpn6jember.sch.id</span>
+              <span>info@smpnjember.sch.id</span>
             </div>
           </div>
         </div>
@@ -205,10 +205,10 @@ export const Footer: React.FC<FooterProps> = ({
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
         <p>
-          &copy; 2026 SMP Negeri 6 Jember. Hak Cipta Dilindungi Undang-Undang.
+          &copy; 2026 SMP Negeri Jember. Hak Cipta Dilindungi Undang-Undang.
         </p>
         <p className="flex items-center gap-1">
-          Dikelola oleh Tim Pengembang IT & Humas SMP 6 Jember
+          Dikelola oleh Tim Pengembang IT & Humas SMP Negeri Jember
         </p>
       </div>
     </footer>

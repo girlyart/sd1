@@ -39,7 +39,7 @@ export const TeachersSection: React.FC = () => {
             <span>DEWAN GURU & TENAGA PENDIDIK</span>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white leading-snug">
-            Tenaga Pendidik <span className="text-blue-600">SMP Negeri 6</span> Jember
+            Tenaga Pendidik <span className="text-blue-600">SMP Negeri</span> Jember
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
             Bapak dan ibu guru profesional, ramah, dan berpengalaman di bidangnya.

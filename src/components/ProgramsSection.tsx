@@ -40,7 +40,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
             Program Unggulan & Ekskul di{' '}
             <span className="text-blue-600 dark:text-blue-400">
-              SMP 6 Jember
+              SMP Negeri Jember
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 dark:text-slate-400">

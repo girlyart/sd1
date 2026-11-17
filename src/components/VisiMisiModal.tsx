@@ -49,7 +49,7 @@ export const VisiMisiModal: React.FC<VisiMisiModalProps> = ({ isOpen, onClose })
           {/* Visi */}
           <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/70 dark:from-slate-800 dark:to-slate-800/60 border border-blue-200 dark:border-slate-700">
             <span className="text-[11px] font-extrabold text-blue-700 dark:text-blue-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
-              <Sparkles className="w-4 h-4" /> Visi SMP 6 Jember
+              <Sparkles className="w-4 h-4" /> Visi SMP Negeri Jember
             </span>
             <p className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white leading-relaxed italic">
               "Terwujudnya Lulusan SMP yang Berakhlak Mulia, Unggul dalam Prestasi
