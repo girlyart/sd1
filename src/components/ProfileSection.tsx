@@ -31,7 +31,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#f0f6ff] dark:border-slate-800 bg-[#f0f6ff] dark:bg-slate-900 group">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
-                alt="Kepala Sekolah SMP Negeri Jember - Dr. H. Hendra Wijaya, M.Pd."
+                alt="Kepala Sekolah SD Negeri Jember - Dr. H. Hendra Wijaya, M.Pd."
                 className="w-full h-[400px] object-cover object-top group-hover:scale-102 transition-transform duration-500"
               />
               <div className="p-6 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent text-white -mt-24 relative z-10 pt-12">
@@ -65,7 +65,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
               Assalamu’alaikum Warahmatullahi Wabarakatuh. Puji syukur kita panjatkan
-              ke hadirat Tuhan Yang Maha Esa. SMP Negeri Jember berkomitmen
+              ke hadirat Tuhan Yang Maha Esa. SD Negeri Jember berkomitmen
               menjadi rumah kedua bagi para siswa untuk bertumbuh menjadi pribadi
               yang beriman, berkarakter mulia, unggul dalam sains dan teknologi, serta
               siap bersaing di tingkat global.
@@ -85,7 +85,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
                   30
                 </div>
                 <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 mt-0.5">
-                  Rombel Kelas VII–IX
+                  Rombel Kelas I–VI
                 </div>
               </div>
 

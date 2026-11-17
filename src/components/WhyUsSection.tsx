@@ -24,7 +24,7 @@ export const WhyUsSection: React.FC = () => {
     {
       icon: Trophy,
       title: 'Jejaring Prestasi Luas',
-      desc: '99% lulusan diterima di SMA & SMK favorit nasional serta langganan medali emas OSN, O2SN, dan FLS2N tingkat provinsi & nasional.',
+      desc: '99% lulusan diterima di SMP unggulan & favorit serta langganan medali emas OSN, O2SN, dan FLS2N tingkat provinsi & nasional.',
       tag: 'Akreditasi A Unggul',
     },
   ];
@@ -42,7 +42,7 @@ export const WhyUsSection: React.FC = () => {
             <span>KEUNGGULAN UTAMA SEKOLAH</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-snug">
-            Kenapa Harus <span className="text-blue-600 dark:text-blue-400">SMP Negeri</span> Jember?
+            Kenapa Harus <span className="text-blue-600 dark:text-blue-400">SD Negeri</span> Jember?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
             Komitmen kami menghadirkan ekosistem pendidikan komprehensif yang mengasah

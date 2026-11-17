@@ -94,7 +94,7 @@ export const AchievementsSection: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight font-heading">
               Prestasi Membanggakan <br />
               <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-white bg-clip-text text-transparent">
-                Siswa SMP Negeri Jember
+                Siswa SD Negeri Jember
               </span>
             </h1>
 
@@ -126,7 +126,7 @@ export const AchievementsSection: React.FC = () => {
 
             <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/15">
               <div className="text-2xl sm:text-3xl font-black text-amber-300">99%</div>
-              <div className="text-xs text-blue-100 font-semibold mt-1">Lolos SMA/SMK Favorit</div>
+              <div className="text-xs text-blue-100 font-semibold mt-1">Lolos SMP Favorit</div>
               <div className="text-[10px] text-blue-200/80 mt-0.5">Jalur Prestasi Unggulan</div>
             </div>
           </div>
@@ -361,7 +361,7 @@ export const AchievementsSection: React.FC = () => {
           )}
         </div>
 
-        {/* 5. 3 Pilar Pembinaan Prestasi SMP Negeri Jember */}
+        {/* 5. 3 Pilar Pembinaan Prestasi SD Negeri Jember */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
           <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
             <div className="w-10 h-10 rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 flex items-center justify-center font-bold">
@@ -395,7 +395,7 @@ export const AchievementsSection: React.FC = () => {
               Apresiasi & Beasiswa Sekolah
             </h4>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              Penghargaan berupa piagam resmi, pembebasan biaya penunjang, serta rekomendasi ke SMA/SMK impian.
+              Penghargaan berupa piagam resmi, pembebasan biaya penunjang, serta rekomendasi ke SMP impian.
             </p>
           </div>
         </div>
@@ -457,7 +457,7 @@ export const AchievementsSection: React.FC = () => {
               <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-amber-800 dark:text-amber-200">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
                 <p className="text-[11px] leading-relaxed">
-                  Telah diverifikasi oleh Bidang Kesiswaan SMP Negeri Jember sebagai salah satu capaian unggulan sekolah.
+                  Telah diverifikasi oleh Bidang Kesiswaan SD Negeri Jember sebagai salah satu capaian unggulan sekolah.
                 </p>
               </div>
 

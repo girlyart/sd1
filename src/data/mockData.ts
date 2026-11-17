@@ -99,7 +99,7 @@ export const PROGRAMS: Program[] = [
     categoryLabel: 'Kelas Unggulan',
     description: 'Pembelajaran Matematika, Sains, dan Bahasa Inggris dengan pengantar dwi-bahasa untuk kesiapan kompetisi global.',
     detailedInfo: {
-      overview: 'Program kelas unggulan yang memadukan Kurikulum Merdeka Mandiri dengan pengantar Cambridge Lower Secondary Checkpoint. Siswa dilatih berdiskusi ilmiah, presentasi dwi-bahasa (Indonesia & Inggris), dan mengoperasikan perangkat laboratorium digital.',
+      overview: 'Program kelas unggulan yang memadukan Kurikulum Merdeka Mandiri dengan pengantar Cambridge Primary Companion. Siswa dilatih berdiskusi ilmiah, presentasi dwi-bahasa (Indonesia & Inggris), dan mengoperasikan perangkat laboratorium digital.',
       highlights: [
         'Dua bahasa pengantar (English & Indonesian) untuk Science, Math & English',
         'Interactive Flat Panel Display di setiap ruang kelas',
@@ -108,7 +108,7 @@ export const PROGRAMS: Program[] = [
       ],
       schedule: 'Senin - Jumat | Terintegrasi Jam Sekolah Reguler',
       mentor: 'Ratna Puspitasari, S.Pd., M.Ed. & Tim Guru Bilingual',
-      target: 'Mempersiapkan siswa masuk SMA/SMK Unggulan dan Boarding School ternama',
+      target: 'Mempersiapkan siswa masuk SMP Unggulan dan Favorit ternama',
     },
     image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80',
   },
@@ -119,7 +119,7 @@ export const PROGRAMS: Program[] = [
     categoryLabel: 'Sains & Teknologi',
     description: 'Pembinaan intensif cabang Matematika, IPA, dan IPS dibimbing langsung oleh mentor peraih medali & dosen universitas.',
     detailedInfo: {
-      overview: 'Pusat akselerasi bakat sains pelajar SMP Negeri Jember. Calon peserta diseleksi melalui tes minat bakat dan dibina secara intensif melalui klinik sains, riset mandiri, serta simulasi soal standar olimpiade nasional dan internasional.',
+      overview: 'Pusat akselerasi bakat sains pelajar SD Negeri Jember. Calon peserta diseleksi melalui tes minat bakat dan dibina secara intensif melalui klinik sains, riset mandiri, serta simulasi soal standar olimpiade nasional dan internasional.',
       highlights: [
         'Klinik bedah soal tingkat kota, provinsi, hingga nasional',
         'Praktikum eksperimen riil di Laboratorium STEM Terpadu',
@@ -141,7 +141,7 @@ export const PROGRAMS: Program[] = [
     detailedInfo: {
       overview: 'Menyeimbangkan kecerdasan intelektual dengan kecerdasan spiritual dan moral. Program ini diselenggarakan di Masjid Al-Uswah sekolah setiap pagi sebelum jam pelajaran dan sore hari dengan bimbingan hafiz/hafizah bersanad.',
       highlights: [
-        'Target hafalan minimal 3 juz mutqin selama jenjang SMP',
+        'Target hafalan minimal 3 juz mutqin selama jenjang SD',
         'Metode Talaqqi, Tasmi\' 1 Juz Sekali Duduk, dan Ujian Munaqasyah',
         'Pembinaan karakter ramah anak, anti-perundungan, dan bakti sosial',
         'Wisuda Tahfidz Akbar bersama orang tua di akhir semester',
@@ -179,7 +179,7 @@ export const PROGRAMS: Program[] = [
     categoryLabel: 'Seni & Olahraga',
     description: 'Pendidikan kepanduan pembentuk karakter tangguh, serta tim olahraga prestasi untuk kompetisi O2SN dan kejuaraan pelajar.',
     detailedInfo: {
-      overview: 'Pramuka Garuda Gugus Depan SMP Negeri Jember merupakan salah satu pangkalan berprestasi tinggi di Kabupaten Jember. Ditunjang pembinaan cabang olahraga bola basket, futsal, bulutangkis, dan pencak silat dengan lapangan berstandar.',
+      overview: 'Pramuka Siaga & Penggalang Gugus Depan SD Negeri Jember merupakan salah satu pangkalan berprestasi tinggi di Kabupaten Jember. Ditunjang pembinaan cabang olahraga bola basket, futsal, bulutangkis, dan pencak silat dengan lapangan berstandar.',
       highlights: [
         'Pelatihan kepemimpinan lapangan, sandi, navigasi alam, dan pionering',
         'Latihan rutin tim basket & futsal dengan pelatih berlisensi nasional',
@@ -272,7 +272,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Olimpiade Sains Nasional (OSN) Tingkat Jawa Timur',
     year: '2026',
     level: 'Provinsi',
-    recipient: 'Ananda Rizky Pratama (Kelas VIII-A)',
+    recipient: 'Ananda Rizky Pratama (Kelas V-A)',
     category: 'sains',
     icon: 'trophy',
   },
@@ -292,7 +292,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'National Youth Robotic Competition (NYRC)',
     year: '2026',
     level: 'Nasional',
-    recipient: 'Tim Robotik SMP Negeri Jember (Farel & Aisyah)',
+    recipient: 'Tim Robotik SD Negeri Jember (Farel & Aisyah)',
     category: 'sains',
     icon: 'medal',
   },
@@ -302,7 +302,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Lomba Tingkat III Kwartir Cabang Jember',
     year: '2026',
     level: 'Kota',
-    recipient: 'Pasukan Garuda Gugus Depan SMP Negeri Jember',
+    recipient: 'Pasukan Garuda Gugus Depan SD Negeri Jember',
     category: 'umum',
     icon: 'shield',
   },
@@ -312,27 +312,27 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Olimpiade Olahraga Siswa Nasional (O2SN)',
     year: '2025',
     level: 'Provinsi',
-    recipient: 'Kevin Maulana (Kelas IX-C)',
+    recipient: 'Kevin Maulana (Kelas VI-C)',
     category: 'olahraga',
     icon: 'medal',
   },
   {
     id: 'a6',
     title: 'Juara 1 Cerdas Cermat Bahasa Inggris',
-    competition: 'English Olympiad Inter-Junior High School Jawa Timur',
+    competition: 'English Olympiad Inter-Elementary School Jawa Timur',
     year: '2025',
     level: 'Provinsi',
-    recipient: 'Team Bilingual SMP Negeri Jember (Adelia, Rafi, Zahra)',
+    recipient: 'Team Bilingual SD Negeri Jember (Adelia, Rafi, Zahra)',
     category: 'sains',
     icon: 'trophy',
   },
   {
     id: 'a7',
     title: 'Juara 1 Turnamen Basket Pelajar Cup',
-    competition: 'Kejuaraan Bola Basket Antar Pelajar SMP Kabupaten Jember',
+    competition: 'Kejuaraan Bola Basket Antar Pelajar SD Kabupaten Jember',
     year: '2026',
     level: 'Kota',
-    recipient: 'Tim Basket Putra SMP Negeri Jember',
+    recipient: 'Tim Basket Putra SD Negeri Jember',
     category: 'olahraga',
     icon: 'trophy',
   },
@@ -342,7 +342,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Musabaqah Hifdzil Qur\'an Tingkat Jawa Timur',
     year: '2026',
     level: 'Provinsi',
-    recipient: 'Muhammad Ilham Robbani (Kelas VII-B)',
+    recipient: 'Muhammad Ilham Robbani (Kelas IV-B)',
     category: 'umum',
     icon: 'award',
   },
@@ -352,7 +352,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     competition: 'Festival dan Lomba Seni Siswa Nasional (FLS2N)',
     year: '2025',
     level: 'Nasional',
-    recipient: 'Clarissa Amanda (Kelas IX-A)',
+    recipient: 'Clarissa Amanda (Kelas VI-A)',
     category: 'seni',
     icon: 'medal',
   },
@@ -362,8 +362,8 @@ export const ARTICLES: Article[] = [
   {
     id: 'art-1',
     title: 'Pameran Karya P5 Kurikulum Merdeka: 40+ Inovasi Daur Ulang & Eco-Enzyme Siswa',
-    excerpt: 'Siswa kelas VII dan VIII menampilkan karya berbasis kearifan lokal dan pelestarian lingkungan dalam Gelar Karya Proyek Penguatan Profil Pelajar Pancasila.',
-    content: `Kegiatan Gelar Karya P5 (Proyek Penguatan Profil Pelajar Pancasila) di SMP Negeri Jember tahun 2026 berlangsung dengan sangat meriah di lapangan utama dan koridor sekolah. Dengan mengangkat tema "Gaya Hidup Berkelanjutan", para siswa mempersembahkan lebih dari 40 purwarupa ramah lingkungan.
+    excerpt: 'Siswa kelas V dan VI menampilkan karya berbasis kearifan lokal dan pelestarian lingkungan dalam Gelar Karya Proyek Penguatan Profil Pelajar Pancasila.',
+    content: `Kegiatan Gelar Karya P5 (Proyek Penguatan Profil Pelajar Pancasila) di SD Negeri Jember tahun 2026 berlangsung dengan sangat meriah di lapangan utama dan koridor sekolah. Dengan mengangkat tema "Gaya Hidup Berkelanjutan", para siswa mempersembahkan lebih dari 40 purwarupa ramah lingkungan.
 
 Di antara inovasi yang menarik perhatian dewan juri dan orang tua adalah pembuatan Eco-Enzyme dari sisa kulit buah kantin sekolah, purwarupa tempat sampah pintar pendeteksi plastik otomatis bertenaga sensor ultrasonik buatan klub robotika, serta instalasi busana daur ulang koran dan botol plastik yang ditampilkan dalam fashion show siswa.
 
@@ -376,9 +376,9 @@ Kepala Sekolah, Dr. H. Hendra Wijaya, M.Pd., menyampaikan apresiasi setinggi-tin
   },
   {
     id: 'art-2',
-    title: 'Tim Robotik SMP Negeri Jember Raih Penghargaan Best Design Tingkat Nasional',
-    excerpt: 'Membanggakan! Prototipe robot penyiram otomatis hemat energi berbasis IoT hasil rancangan siswa kelas VIII berhasil memikat dewan juri kompetisi nasional.',
-    content: `Prestasi membanggakan kembali dipersembahkan oleh Tim Robotika SMP Negeri Jember. Dalam ajang National Youth Robotic Competition 2026 yang diikuti oleh lebih dari 120 sekolah se-Indonesia, tim kita berhasil menyabet gelar bergengsi "Best Mechanical Design & Innovation".
+    title: 'Tim Robotik SD Negeri Jember Raih Penghargaan Best Design Tingkat Nasional',
+    excerpt: 'Membanggakan! Prototipe robot penyiram otomatis hemat energi berbasis IoT hasil rancangan siswa kelas VI berhasil memikat dewan juri kompetisi nasional.',
+    content: `Prestasi membanggakan kembali dipersembahkan oleh Tim Robotika SD Negeri Jember. Dalam ajang National Youth Robotic Competition 2026 yang diikuti oleh lebih dari 120 sekolah se-Indonesia, tim kita berhasil menyabet gelar bergengsi "Best Mechanical Design & Innovation".
 
 Robot yang dirancang bernama "AgroSmart-Bot", dirancang khusus untuk memantau kelembaban tanah dan mengairi tanaman secara presisi menggunakan sensor nirkabel berbasis mikrokontroler. 
 
@@ -392,16 +392,16 @@ Robot yang dirancang bernama "AgroSmart-Bot", dirancang khusus untuk memantau ke
   {
     id: 'art-3',
     title: 'Sosialisasi Alur & Tata Cara PPDB 2026/2027: Panduan Jalur Zonasi, Prestasi & Afirmasi',
-    excerpt: 'Panduan lengkap persiapan dokumen bagi calon peserta didik baru lulusan Sekolah Dasar (SD/MI) untuk mendaftar di SMP Negeri Jember.',
-    content: `Menjelang dibukanya Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027, panitia PPDB SMP Negeri Jember merilis petunjuk teknis pendaftaran resmi.
+    excerpt: 'Panduan lengkap persiapan dokumen bagi calon peserta didik baru lulusan TK/RA/PAUD untuk mendaftar di SD Negeri Jember.',
+    content: `Menjelang dibukanya Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027, panitia PPDB SD Negeri Jember merilis petunjuk teknis pendaftaran resmi.
 
 Tahun ini, kuota penerimaan dibuka melalui empat jalur utama:
 1. Jalur Zonasi (50% Kuota): Berdasarkan jarak domisili kartu keluarga ke sekolah.
-2. Jalur Prestasi (30% Kuota): Terdiri dari nilai rapor rata-rata dan sertifikat kejuaraan resmi.
+2. Jalur Prestasi (30% Kuota): Terdiri dari rekam perkembangan dan sertifikat kejuaraan resmi.
 3. Jalur Afirmasi (15% Kuota): Bagi siswa pemegang Kartu Indonesia Pintar (KIP) / DTKS.
 4. Jalur Perpindahan Tugas Orang Tua (5% Kuota).
 
-Pendaftaran dilakukan secara daring (online) tanpa dipungut biaya apapun (Gratis). Calon wali murid diimbau untuk menyiapkan berkas ijazah/surat keterangan lulus, akta kelahiran, dan kartu keluarga.`,
+Pendaftaran dilakukan secara daring (online) tanpa dipungut biaya apapun (Gratis). Calon wali murid diimbau untuk menyiapkan berkas surat keterangan lulus TK/RA (bila ada), akta kelahiran, dan kartu keluarga.`,
     category: 'PPDB',
     date: '02 November 2026',
     author: 'Panitia PPDB 2026',
@@ -416,7 +416,7 @@ export const ACADEMIC_EVENTS: AcademicEvent[] = [
     title: 'Sosialisasi & Bimbingan Teknis PPDB 2026 Daring',
     date: '10 Nov 2026',
     time: '08.30 - 11.30 WIB',
-    location: 'Aula Graha SMP Negeri Jember & Zoom Meeting',
+    location: 'Aula Graha SD Negeri Jember & Zoom Meeting',
     type: 'Akademik',
   },
   {
@@ -440,7 +440,7 @@ export const ACADEMIC_EVENTS: AcademicEvent[] = [
     title: 'Penilaian Sumatif Akhir Semester (PSAS) Ganjil',
     date: '08 - 15 Des 2026',
     time: '07.00 - 12.00 WIB',
-    location: 'Semua Ruang Kelas VII - IX',
+    location: 'Semua Ruang Kelas I - VI',
     type: 'Ujian',
   },
   {
@@ -455,7 +455,7 @@ export const ACADEMIC_EVENTS: AcademicEvent[] = [
 
 export const PPDB_FAQS = [
   {
-    q: 'Apakah pendaftaran PPDB di SMP Negeri Jember dipungut biaya?',
+    q: 'Apakah pendaftaran PPDB di SD Negeri Jember dipungut biaya?',
     a: 'Tidak ada biaya pendaftaran (100% Gratis). Sekolah kami adalah sekolah negeri yang didanai penuh oleh Dana BOS Nasional dan BOS Daerah, tanpa pungutan uang gedung maupun uang formulir.',
   },
   {
@@ -468,7 +468,7 @@ export const PPDB_FAQS = [
   },
   {
     q: 'Dokumen apa saja yang wajib disiapkan saat pendaftaran berkas?',
-    a: '1. Fotokopi Kartu Keluarga (KK), 2. Akta Kelahiran, 3. Surat Keterangan Lulus (SKL) / Ijazah SD, 4. Fotokopi Rapor kelas IV–VI, 5. Piagam kejuaraan resmi (khusus jalur prestasi).',
+    a: '1. Fotokopi Kartu Keluarga (KK), 2. Akta Kelahiran, 3. Surat Keterangan TK/RA/PAUD (jika ada), 4. Fotokopi KTP Orang Tua/Wali, 5. Piagam kejuaraan resmi (jika ada).',
   },
   {
     q: 'Apakah ada fasilitas beasiswa atau bantuan seragam bagi keluarga prasejahtera?',

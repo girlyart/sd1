@@ -58,7 +58,7 @@ export const ContactSection: React.FC = () => {
               <p className="mt-3 text-sm text-blue-100 leading-relaxed font-normal">
                 Punya pertanyaan seputar penerimaan siswa baru (PPDB), mutasi siswa,
                 kunjungan studi banding, atau layanan konseling? Tim Tata Usaha dan
-                Humas SMP Negeri Jember siap melayani Anda dengan ramah dan cepat.
+                Humas SD Negeri Jember siap melayani Anda dengan ramah dan cepat.
               </p>
             </div>
 
@@ -103,7 +103,7 @@ export const ContactSection: React.FC = () => {
                     Email Resmi Sekolah
                   </h4>
                   <p className="text-xs sm:text-sm font-semibold text-white mt-0.5 font-mono">
-                    info@smpnjember.sch.id
+                    info@sdnjember.sch.id
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@ export const ContactSection: React.FC = () => {
                 <div className="p-4 rounded-2xl bg-emerald-500/20 backdrop-blur-md border border-emerald-400/40 text-emerald-100 text-xs flex items-center gap-2.5 animate-in fade-in">
                   <CheckCircle2 className="w-5 h-5 text-emerald-300 shrink-0" />
                   <span>
-                    Terima kasih! Pesan Anda telah diterima oleh Sekretariat Humas SMP Negeri Jember. Tim kami akan segera merespons melalui WhatsApp atau Email.
+                    Terima kasih! Pesan Anda telah diterima oleh Sekretariat Humas SD Negeri Jember. Tim kami akan segera merespons melalui WhatsApp atau Email.
                   </span>
                 </div>
               )}

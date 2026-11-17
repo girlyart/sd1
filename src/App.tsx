@@ -89,7 +89,7 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {/* Jika di Beranda: HANYA tampilkan Top Header, Kenapa Harus SMP Negeri Jember, dan Profil Kepala Sekolah */}
+        {/* Jika di Beranda: HANYA tampilkan Top Header, Kenapa Harus SD Negeri Jember, dan Profil Kepala Sekolah */}
         {activeView === 'beranda' && (
           <>
             {/* 1. Top Header */}
@@ -101,7 +101,7 @@ export default function App() {
               onOpenVideo={() => setIsVideoOpen(true)}
             />
 
-            {/* 2. Kenapa Harus SMP Negeri Jember? */}
+            {/* 2. Kenapa Harus SD Negeri Jember? */}
             <WhyUsSection />
 
             {/* 3. Profil & Sambutan Kepala Sekolah */}

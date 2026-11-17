@@ -64,7 +64,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             </div>
             <div>
               <h3 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">
-                Tur Virtual & Video Profil SMP Negeri Jember
+                Tur Virtual & Video Profil SD Negeri Jember
               </h3>
               <p className="text-[10px] text-slate-400">
                 Dokumenter Resmi Fasilitas, Guru & Pembelajaran Berstandar Unggul
@@ -155,7 +155,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 
           <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
             <span className="text-xs text-slate-500">
-              Tertarik bergabung dengan keluarga besar SMP Negeri Jember?
+              Tertarik bergabung dengan keluarga besar SD Negeri Jember?
             </span>
             <button
               onClick={() => {

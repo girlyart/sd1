@@ -60,7 +60,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
     e.preventDefault();
 
     const randomNum = Math.floor(1000 + Math.random() * 9000);
-    const regId = `SMPNJ-2026-${randomNum}`;
+    const regId = `SDNJ-2026-${randomNum}`;
 
     const newApp: PPDBApplication = {
       registrationId: regId,
@@ -124,19 +124,19 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
 
       if (match) {
         setFoundStatus(match);
-      } else if (term === 'SMPNJ-2026-8821' || term === 'SMPN1-2026-8821' || term === '0098765432') {
+      } else if (term === 'SDNJ-2026-8821' || term === 'SMPNJ-2026-8821' || term === 'SMPN1-2026-8821' || term === '0098765432') {
         // Demo mock record
         setFoundStatus({
-          registrationId: 'SMPNJ-2026-8821',
+          registrationId: 'SDNJ-2026-8821',
           studentName: 'Aisyah Putri Azzahra',
           nisn: '0098765432',
-          birthDate: '2013-05-14',
+          birthDate: '2019-05-14',
           gender: 'Perempuan',
-          previousSchool: 'SD Negeri 01 Kebayoran',
+          previousSchool: 'TK Pertiwi 01 Jember',
           path: 'Prestasi',
           parentName: 'H. Bambang Prasetyo',
           parentPhone: '081234567890',
-          address: 'Jl. Gandaria No. 12, Jakarta Selatan',
+          address: 'Jl. Karimata No. 12, Sumbersari, Jember',
           averageGrade: '92.4',
           submissionDate: '24 Oktober 2026',
           status: 'Lolos Seleksi Administrasi',
@@ -172,7 +172,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                 </span>
               </div>
               <h3 className="font-extrabold text-base sm:text-lg mt-0.5">
-                Portal PPDB Online SMP Negeri Jember
+                Portal PPDB Online SD Negeri Jember
               </h3>
             </div>
           </div>
@@ -251,7 +251,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                           KARTU BUKTI PRA-PENDAFTARAN PPDB 2026
                         </span>
                         <h4 className="font-black text-xl text-slate-900 dark:text-white">
-                          SMP NEGERI JEMBER
+                          SD NEGERI JEMBER
                         </h4>
                         <p className="text-[10px] text-slate-400">
                           Jl. Karimata No. 58, Sumbersari, Jember, Jawa Timur
@@ -286,7 +286,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                       </div>
                       <div>
                         <span className="text-slate-400 block text-[10px]">
-                          Asal Sekolah SD
+                          Asal Sekolah (TK / PAUD)
                         </span>
                         <span className="font-semibold text-slate-900 dark:text-white">
                           {registeredApp.previousSchool}
@@ -356,14 +356,14 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>
                       Pastikan data yang diisi sesuai dengan Dokumen Resmi (Kartu
-                      Keluarga & Ijazah/SKL SD). Pendaftaran ini <strong>100% Gratis</strong> tanpa biaya.
+                      Keluarga & Akta Kelahiran / Surat Keterangan TK). Pendaftaran ini <strong>100% Gratis</strong> tanpa biaya.
                     </span>
                   </div>
 
                   {/* Nama Lengkap */}
                   <div>
                     <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
-                      Nama Lengkap Calon Siswa (Sesuai Ijazah SD) *
+                      Nama Lengkap Calon Siswa (Sesuai Akta Kelahiran) *
                     </label>
                     <input
                       type="text"
@@ -412,16 +412,16 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                     </div>
                   </div>
 
-                  {/* Asal Sekolah SD & Nilai Rapor */}
+                  {/* Asal Sekolah TK/PAUD & Nilai Kesiapan */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
-                        Asal Sekolah Dasar (SD / MI) *
+                        Asal Sekolah (TK / RA / PAUD) *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Contoh: SDN 01 Rawamangun"
+                        placeholder="Contoh: TK Pertiwi 01 Jember"
                         value={formData.previousSchool}
                         onChange={(e) =>
                           setFormData({
@@ -575,7 +575,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                   Pencarian Status Verifikasi & Seleksi
                 </h4>
                 <p className="text-slate-500 dark:text-slate-400">
-                  Masukkan No. Bukti Registrasi (contoh: <code>SMPNJ-2026-8821</code>) atau 10 digit NISN calon siswa.
+                  Masukkan No. Bukti Registrasi (contoh: <code>SDNJ-2026-8821</code>) atau 10 digit NISN calon siswa.
                 </p>
               </div>
 
@@ -628,7 +628,7 @@ export const PPDBModal: React.FC<PPDBModalProps> = ({
                 </div>
               ) : (
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-500 text-center">
-                  💡 Tips demo: Anda dapat mencoba mengecek nomor contoh <code>SMPNJ-2026-8821</code> atau mendaftar baru.
+                  💡 Tips demo: Anda dapat mencoba mengecek nomor contoh <code>SDNJ-2026-8821</code> atau mendaftar baru.
                 </div>
               )}
             </div>
